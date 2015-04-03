@@ -3,7 +3,6 @@
 <li>Clone repositori ini.</li>
 
 <li>Buka Command Prompt, cd ke folder hasil clone (yang ada file artisan)</li>
-<li>
 <li>Jalankan command: <code>composer update</code></li>
 <li>
 Buat file .env (isinya copy paste dari file .env.example), edit bagian 
