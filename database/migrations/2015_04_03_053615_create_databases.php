@@ -145,7 +145,7 @@ class CreateDatabases extends Migration {
 		Schema::drop('IzinUsahaTokoModern');
 		Schema::drop('IzinUsahaPusatPerbelanjaan');
 		Schema::drop('Izin');
-		Schema::drop('User');
+		Schema::drop('Pengguna');
 	}
 
 }
