@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class IzinTempatPenjualanMinumanBeralkohol extends Controller {
+class IzinUsahaPasarTradisionalController extends Controller {
 
 	/**
 	 * Display a listing of the resource.

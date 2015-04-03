@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class IzinUsahaTokoModern extends Controller {
+class IzinUsahaPusatPerbelanjaanController extends Controller {
 
 	/**
 	 * Display a listing of the resource.

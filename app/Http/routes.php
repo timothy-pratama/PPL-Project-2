@@ -10,7 +10,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
@@ -19,3 +18,11 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::resource('Izin','IzinController');
+Route::resource('IzinTempatPenjualanMinumanBeralkohol','IzinTempatPenjualanMinumanBeralkoholController');
+Route::resource('IzinUsahaPasarTradisional','IzinUsahaPasarTradisionalController');
+Route::resource('IzinUsahaPusatPerbelanjaan','IzinUsahaPusatPerbelanjaanController');
+Route::resource('IzinUsahaTokoModern','IzinUsahaTokoModernController');
+Route::resource('Pengguna','PenggunaController');
+Route::resource('TandaPendaftaranWaralaba','TandaPendaftaranWaralabaController');

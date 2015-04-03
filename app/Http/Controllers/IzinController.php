@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class TandaPendaftaranWaralaba extends Controller {
+class IzinController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
