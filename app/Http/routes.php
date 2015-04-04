@@ -13,6 +13,12 @@
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
+Route::get('izin', 'IzinController@index');
+Route::get('izin/IzinTempatPenjualanMinumanBeralkohol', 'IzinTempatPenjualanMinumanBeralkoholController@index');
+Route::get('izin/IzinUsahaPasarTradisional', 'IzinUsahaPasarTradisionalController@index');
+Route::get('izin/IzinUsahaPusatPerbelanjaan', 'IzinUsahaPusatPerbelanjaanController@index');
+Route::get('izin/IzinUsahaTokoModern', 'IzinUsahaTokoModernController@index');
+Route::get('izin/TandaPendaftaranWaralaba', 'TandaPendaftaranWaralabaController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

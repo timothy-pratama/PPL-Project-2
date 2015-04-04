@@ -14,7 +14,7 @@ class IzinUsahaPusatPerbelanjaanController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		return view('izin.pusatperbelanjaan');
 	}
 
 	/**
@@ -24,7 +24,7 @@ class IzinUsahaPusatPerbelanjaanController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		
 	}
 
 	/**
@@ -34,7 +34,7 @@ class IzinUsahaPusatPerbelanjaanController extends Controller {
 	 */
 	public function store()
 	{
-		//
+		dd(Request::all());
 	}
 
 	/**

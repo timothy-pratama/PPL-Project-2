@@ -14,7 +14,7 @@ class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		return view('izin.minumanberalkohol');
 	}
 
 	/**

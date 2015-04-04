@@ -14,7 +14,7 @@ class IzinUsahaTokoModernController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		return view('izin.tokomodern');
 	}
 
 	/**

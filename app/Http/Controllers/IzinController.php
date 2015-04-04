@@ -14,7 +14,7 @@ class IzinController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		return view('izin.index');
 	}
 
 	/**

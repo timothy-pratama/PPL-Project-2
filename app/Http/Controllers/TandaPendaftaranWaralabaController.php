@@ -14,7 +14,7 @@ class TandaPendaftaranWaralabaController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		return view('izin.waralaba');
 	}
 
 	/**
