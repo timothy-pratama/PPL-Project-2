@@ -15,7 +15,7 @@
 			</div>
 			
 			@if ( !$izin->count() )
-				Tidak ada izin toko modern
+				Tidak ada izin usaha toko modern
 			@else
 				<ul>
 					@foreach( $izin as $i )

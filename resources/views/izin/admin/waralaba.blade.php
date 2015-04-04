@@ -13,6 +13,16 @@
 				  <li class ="active"><a href="#">Izin Tanda Pendaftaran Waralaba</a></li>
 				</ul>
 			</div>
+			
+			@if ( !$izin->count() )
+				Tidak ada izin tanda pendaftaran waralaba
+			@else
+				<ul>
+					@foreach( $izin as $i )
+						<li>{{ $i->id }}</li>
+					@endforeach
+				</ul>
+			@endif
 		</div>
 	</div>
 @endsection

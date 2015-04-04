@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\IzinUsahaPusatPerbelanjaan;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -19,7 +20,8 @@ class IzinUsahaPusatPerbelanjaanController extends Controller {
 	
 	public function admin() 
 	{
-		return view('izin.admin.pusatperbelanjaan');
+		$izin = IzinUsahaPusatPerbelanjaan::all();
+		return view('izin.admin.pusatperbelanjaan', compact('izin'));
 	}
 	/**
 	 * Show the form for creating a new resource.

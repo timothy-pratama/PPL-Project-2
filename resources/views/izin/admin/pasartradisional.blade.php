@@ -13,6 +13,16 @@
 				  <li><a href="{{ url('/Admin/izin/TandaPendaftaranWaralaba') }}">Izin Tanda Pendaftaran Waralaba</a></li>
 				</ul>
 			</div>
+			
+			@if ( !$izin->count() )
+				Tidak ada izin pengelolaan pasar tradisional
+			@else
+				<ul>
+					@foreach( $izin as $i )
+						<li>{{ $i->id }}</li>
+					@endforeach
+				</ul>
+			@endif
 		</div>
 	</div>
 @endsection

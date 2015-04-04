@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\TandaPendaftaranWaralaba;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -19,7 +20,8 @@ class TandaPendaftaranWaralabaController extends Controller {
 	
 	public function admin() 
 	{
-		return view('izin.admin.waralaba');
+		$izin = TandaPendaftaranWaralaba::all();
+		return view('izin.admin.waralaba', compact('izin'));
 	}
 	/**
 	 * Show the form for creating a new resource.

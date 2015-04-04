@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\IzinTempatPenjualanMinumanBeralkohol;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -19,7 +20,8 @@ class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
 	
 	public function admin() 
 	{
-		return view('izin.admin.minumanberalkohol');
+		$izin = IzinTempatPenjualanMinumanBeralkohol::all();
+		return view('izin.admin.minumanberalkohol', compact('izin'));
 	}
 	/**
 	 * Show the form for creating a new resource.
