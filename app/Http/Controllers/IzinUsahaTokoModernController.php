@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\IzinUsahaTokoModern;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -12,9 +13,15 @@ class IzinUsahaTokoModernController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function user()
 	{
-		return view('izin.tokomodern');
+		return view('izin.user.tokomodern');
+	}
+	
+	public function admin() 
+	{
+		$izin = IzinUsahaTokoModern::all();
+		return view('izin.admin.tokomodern', compact('izin'));
 	}
 
 	/**

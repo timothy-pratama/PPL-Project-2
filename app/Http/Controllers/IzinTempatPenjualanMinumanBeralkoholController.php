@@ -12,11 +12,15 @@ class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function user()
 	{
-		return view('izin.minumanberalkohol');
+		return view('izin.user.minumanberalkohol');
 	}
-
+	
+	public function admin() 
+	{
+		return view('izin.admin.minumanberalkohol');
+	}
 	/**
 	 * Show the form for creating a new resource.
 	 *

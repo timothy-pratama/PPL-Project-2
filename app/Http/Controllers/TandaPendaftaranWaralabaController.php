@@ -12,11 +12,15 @@ class TandaPendaftaranWaralabaController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function user()
 	{
-		return view('izin.waralaba');
+		return view('izin.user.waralaba');
 	}
-
+	
+	public function admin() 
+	{
+		return view('izin.admin.waralaba');
+	}
 	/**
 	 * Show the form for creating a new resource.
 	 *

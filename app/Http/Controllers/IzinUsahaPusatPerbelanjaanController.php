@@ -12,11 +12,15 @@ class IzinUsahaPusatPerbelanjaanController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function user()
 	{
-		return view('izin.pusatperbelanjaan');
+		return view('izin.user.pusatperbelanjaan');
 	}
-
+	
+	public function admin() 
+	{
+		return view('izin.admin.pusatperbelanjaan');
+	}
 	/**
 	 * Show the form for creating a new resource.
 	 *

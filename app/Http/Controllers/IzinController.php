@@ -12,9 +12,14 @@ class IzinController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function user()
 	{
-		return view('izin.index');
+		return view('izin.user.index');
+	}
+	
+	public function admin()
+	{
+		return view('izin.admin.index');
 	}
 
 	/**

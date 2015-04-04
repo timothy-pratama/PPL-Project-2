@@ -12,11 +12,15 @@ class IzinUsahaPasarTradisionalController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function user()
 	{
-		return view('izin.pasartradisional');
+		return view('izin.user.pasartradisional');
 	}
-
+	
+	public function admin() 
+	{
+		return view('izin.admin.pasartradisional');
+	}
 	/**
 	 * Show the form for creating a new resource.
 	 *

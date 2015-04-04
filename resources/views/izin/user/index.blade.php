@@ -1,4 +1,4 @@
-@extends ('home.app')
+@extends ('home.user')
 
 @section ('content')
 	<div class ="container-fluid">
