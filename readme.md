@@ -13,5 +13,6 @@ Buat file .env (isinya copy paste dari file .env.example), edit bagian
 <li>DB_PASSWORD= (password MySQL) </li>
 </ul>
 </li>
-<li>Jalankan command: <code>php artisan migrate</code></li>
+<li>Jalankan command: <code>php artisan migrate</code> untuk melakukan migrasi data</li>
+<li>Lalu : <code>php artisan migrate:refresh --seed</code> untuk mengupdate database berdasarkan seed data </li>
 </ul>
