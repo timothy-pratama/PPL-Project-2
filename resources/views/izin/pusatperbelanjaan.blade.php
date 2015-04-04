@@ -91,7 +91,6 @@
     });
 </script>
 
-
 	<div class ="container-fluid">
 		<div class ="row">
 			<div class ="col-md-2">
@@ -107,7 +106,6 @@
 			<div class = "container-fluid">
 				<h2> <p class ="text-center"><span class="label label-primary">Form Izin Usaha Pusat Perbelanjaan </span> </p> </h2>
 				<form role ="form">
-					<input type="hidden" name="_token" value="{{csrf_token()}}">
 					<div class ="form-group">
 						<button class="btn btn-default dropdown-toggle" id ="DataPribadiButton" type="button" data-toggle="dropdown">  <b>Data Pribadi</b> <span class="caret"></span></button>
 						<button class="btn btn-default dropdown-toggle" id ="DataIzinUsahaTerpaduButton" type="button" data-toggle="dropdown">  <b>Data Izin Usaha Terpadu</b> <span class="caret"></span></button>
@@ -138,8 +136,8 @@
 						<div class ="col-md-4">
 							<label for="AktaPendirian">Fotokopi Akta Pendirian Perusahaan</label>
 							<input type="file" id="AktaPendirianFile">
-							<label for="AktaPendirian">Fotokopi Pengesahan Kehakiman (untuk PT)</label>
-							<input type="file" id="AktaPendirianFile">
+							<label for="PengesahanKehakiman">Fotokopi Pengesahan Kehakiman (untuk PT)</label>
+							<input type="file" id="PengesahanKehakimanFile">
 						</div>
 							
 						<div class ="col-md-4">
@@ -191,11 +189,8 @@
 					</div>
 					<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 					<button type="submit" class="btn btn-default">Daftar</button>
-					</form>
-				</div>
+				</form>
 			</div>
 		</div>
 	</div>
-@endsection	
-
-
+@endsection
