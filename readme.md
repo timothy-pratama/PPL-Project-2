@@ -14,5 +14,5 @@ Buat file .env (isinya copy paste dari file .env.example), edit bagian
 </ul>
 </li>
 <li>Jalankan command: <code>php artisan migrate</code> untuk melakukan migrasi data</li>
-<li>Lalu : <code>php artisan migrate:refresh --seed</code> untuk mengupdate database berdasarkan seed data </li>
+<li>Jalankan command: <code>php artisan migrate:refresh --seed</code> untuk mengupdate database berdasarkan seed data </li>
 </ul>
