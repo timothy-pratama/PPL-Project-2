@@ -27,11 +27,11 @@
 	  <div class="container-fluid">
 		<div class ="row">
 			<div class ="col-md-1"> <?php echo "<img src=".asset("/img/logo.png"); ?> width ="90" height = "90"> </div>
-			<div class ="col-md-10"> <a href ="{{ url('/izin') }}"> <h1><p class="text-center">Aplikasi Izin Usaha dan Sarana Perdagangan</p> </h1> </a></div>
+			<div class ="col-md-10"> <a href ="<?php if ($stats == "admin") echo url('/Admin/izin'); else if ($stats == "user") echo url ('/izin');?>"> <h1><p class="text-center">Aplikasi Izin Usaha dan Sarana Perdagangan</p> </h1> </a></div>
 			<div class ="col-md-1"> <?php echo "<img src=".asset("/img/logo2.png"); ?> width ="90" height = "90"> </div>
 		</div>
 		<div class ="row">
-			<div class ="col-md-6 col-md-offset-3"> <h5> <p class="text-center">Daftarkan Izin Usaha Anda Disini</p></h5></div>
+			<div class ="col-md-6 col-md-offset-3"> <h4> <p class="text-center"><?php if ($stats == "admin") echo 'Ini adalah Panel Admin'; else if ($stats == "user") echo 'Daftarkan Izin Usaha Anda Disini';?></p></h4></div>
 		</div>
 	  </div>
 	</nav>

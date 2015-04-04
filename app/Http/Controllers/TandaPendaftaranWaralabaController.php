@@ -1,10 +1,11 @@
 <?php namespace App\Http\Controllers;
 
-use App\TandaPendaftaranWaralaba;
+use App\Izin;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Redirect;
 
 class TandaPendaftaranWaralabaController extends Controller {
 
@@ -20,9 +21,15 @@ class TandaPendaftaranWaralabaController extends Controller {
 	
 	public function admin() 
 	{
-		$izin = TandaPendaftaranWaralaba::all();
+		$izin = Izin::where('JenisIzin','=','ITPW')->get();
 		return view('izin.admin.waralaba', compact('izin'));
 	}
+	
+	public function updateStatus($id,$status){
+		Izin::where('id', $id)->update(['StatusIzin' => $status]);
+		return Redirect::to('Admin/izin/TandaPendaftaranWaralaba')->with('message', 'Status updated.');
+	}
+	
 	/**
 	 * Show the form for creating a new resource.
 	 *

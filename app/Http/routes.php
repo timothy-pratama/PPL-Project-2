@@ -14,6 +14,7 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+/* User Routing */
 Route::get('izin', 'IzinController@user');
 Route::get('izin/IzinTempatPenjualanMinumanBeralkohol', 'IzinTempatPenjualanMinumanBeralkoholController@user');
 Route::get('izin/IzinUsahaPasarTradisional', 'IzinUsahaPasarTradisionalController@user');
@@ -21,6 +22,7 @@ Route::get('izin/IzinUsahaPusatPerbelanjaan', 'IzinUsahaPusatPerbelanjaanControl
 Route::get('izin/IzinUsahaTokoModern', 'IzinUsahaTokoModernController@user');
 Route::get('izin/TandaPendaftaranWaralaba', 'TandaPendaftaranWaralabaController@user');
 
+/* Admin Routing */
 Route::get('Admin/izin', 'IzinController@admin');
 Route::get('Admin/izin/IzinTempatPenjualanMinumanBeralkohol', 'IzinTempatPenjualanMinumanBeralkoholController@admin');
 Route::get('Admin/izin/IzinUsahaPasarTradisional', 'IzinUsahaPasarTradisionalController@admin');
@@ -28,7 +30,14 @@ Route::get('Admin/izin/IzinUsahaPusatPerbelanjaan', 'IzinUsahaPusatPerbelanjaanC
 Route::get('Admin/izin/IzinUsahaTokoModern', 'IzinUsahaTokoModernController@admin');
 Route::get('Admin/izin/TandaPendaftaranWaralaba', 'TandaPendaftaranWaralabaController@admin');
 
+/* Admin: Update Status */
+Route::get('Admin/izin/IzinTempatPenjualanMinumanBeralkohol/{id}/{status}', 'IzinTempatPenjualanMinumanBeralkoholController@updateStatus');
+Route::get('Admin/izin/IzinUsahaPasarTradisional/{id}/{status}', 'IzinUsahaPasarTradisionalController@updateStatus');
+Route::get('Admin/izin/IzinUsahaPusatPerbelanjaan/{id}/{status}', 'IzinUsahaPusatPerbelanjaanController@updateStatus');
+Route::get('Admin/izin/IzinUsahaTokoModern/{id}/{status}', 'IzinUsahaTokoModernController@updateStatus');
+Route::get('Admin/izin/TandaPendaftaranWaralaba/{id}/{status}', 'TandaPendaftaranWaralabaController@updateStatus');
 
+/* User: Storing File */
 Route::post('izin/IzinUsahaPusatPerbelanjaan/store','IzinUsahaPusatPerbelanjaanController@store');
 
 Route::controllers([

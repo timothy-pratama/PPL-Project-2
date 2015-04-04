@@ -1,10 +1,11 @@
 <?php namespace App\Http\Controllers;
 
-use App\IzinUsahaPasarTradisional;
+use App\Izin;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Redirect;
 
 class IzinUsahaPasarTradisionalController extends Controller {
 
@@ -20,8 +21,13 @@ class IzinUsahaPasarTradisionalController extends Controller {
 	
 	public function admin() 
 	{
-		$izin = IzinUsahaPasarTradisional::all();
+		$izin = Izin::where('JenisIzin','=','IPPT')->get();
 		return view('izin.admin.pasartradisional', compact('izin'));
+	}
+	
+	public function updateStatus($id,$status){
+		Izin::where('id', $id)->update(['StatusIzin' => $status]);
+		return Redirect::to('Admin/izin/IzinUsahaPasarTradisional')->with('message', 'Status updated.');
 	}
 	/**
 	 * Show the form for creating a new resource.

@@ -1,10 +1,11 @@
 <?php namespace App\Http\Controllers;
 
-use App\IzinTempatPenjualanMinumanBeralkohol;
+use App\Izin;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Redirect;
 
 class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
 
@@ -20,8 +21,13 @@ class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
 	
 	public function admin() 
 	{
-		$izin = IzinTempatPenjualanMinumanBeralkohol::all();
+		$izin = Izin::where('JenisIzin','=','ITPMB')->get();
 		return view('izin.admin.minumanberalkohol', compact('izin'));
+	}
+	
+	public function updateStatus($id,$status){
+		Izin::where('id', $id)->update(['StatusIzin' => $status]);
+		return Redirect::to('Admin/izin/IzinTempatPenjualanMinumanBeralkohol')->with('message', 'Status updated.');
 	}
 	/**
 	 * Show the form for creating a new resource.

@@ -1,10 +1,11 @@
 <?php namespace App\Http\Controllers;
 
-use App\IzinUsahaTokoModern;
+use App\Izin;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Redirect;
 
 class IzinUsahaTokoModernController extends Controller {
 
@@ -20,10 +21,14 @@ class IzinUsahaTokoModernController extends Controller {
 	
 	public function admin() 
 	{
-		$izin = IzinUsahaTokoModern::all();
+		$izin = Izin::where('JenisIzin','=','IUTM')->get();
 		return view('izin.admin.tokomodern', compact('izin'));
 	}
-
+	
+	public function updateStatus($id,$status){
+		Izin::where('id', $id)->update(['StatusIzin' => $status]);
+		return Redirect::to('Admin/izin/IzinUsahaTokoModern')->with('message', 'Status updated.');
+	}
 	/**
 	 * Show the form for creating a new resource.
 	 *
