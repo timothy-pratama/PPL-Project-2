@@ -15,10 +15,10 @@ class CreateDatabases extends Migration {
 		Schema::create('Izin', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('NamaPemohon')->default('');
-			$table->string('JenisIzin')->default('');
+			$table->string('JenisIzin',10)->default('');
 			$table->date('TanggalMasuk');
 			$table->date('BerlakuSampai');				
-			$table->boolean('StatusIzin')->default(false);
+			$table->string('StatusIzin',20)->default(false);
 			$table->string('DokumenPersetujuan')->default('');
 			$table->timestamps();
 		});

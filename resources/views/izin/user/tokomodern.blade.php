@@ -104,8 +104,8 @@
 			</div>
 			
 			<div class = "container-fluid">
-				<h2> <p class ="text-center"><span class="label label-primary">Form Izin Usaha Pusat Perbelanjaan </span> </p> </h2>
-				<form role ="form">
+				<h2> <p class ="text-center"><span class="label label-primary">Form Izin Usaha Toko Modern</span> </p> </h2>
+				<form role ="form" method ="post" enctype="multipart/form-data">
 					<div class ="form-group">
 						<button class="btn btn-default dropdown-toggle" id ="DataPribadiButton" type="button" data-toggle="dropdown">  <b>Data Pribadi</b> <span class="caret"></span></button>
 						<button class="btn btn-default dropdown-toggle" id ="DataIzinUsahaTerpaduButton" type="button" data-toggle="dropdown">  <b>Data Izin Usaha Terpadu</b> <span class="caret"></span></button>
@@ -117,73 +117,73 @@
 					<div class ="form-group" id ="DataPribadi">
 						<div class ="col-md-4">
 							<label for="KTP">Fotokopi KTP Pimpinan</label>
-							<input type="file" id="KTPFile">
+							<input type="file" id="KTPFile" name ="KTPFile">
 						</div>
 						<div class ="col-md-4">
 							<label for="Pasfoto">Pasfoto 3x4 Berwarna</label>
-							<input type="file" id="PasfotoFile">
+							<input type="file" id="PasfotoFile" name ="PasfotoFile">
 						</div>
 					</div>
 					
 					<div id ="DataIzinUsahaTerpadu" class ="form-group">
 						<div class ="col-md-4">
 							<label for="SuratIzinGangguan">Fotokopi Surat Izin Gangguan</label>
-							<input type="file" id="SuratIzinGangguanFile">
+							<input type="file" id="SuratIzinGangguanFile" name ="SuratIzinGangguanFile">
 							<label for="SuratKepemilikanTempat">Fotokopi Surat Kepemilikan Tempat</label>
-							<input type="file" id="SuratKepemilikanTempatFile">
+							<input type="file" id="SuratKepemilikanTempatFile" name ="SuratKepemilikanTempatFile">
 						</div>
 								
 						<div class ="col-md-4">
 							<label for="AktaPendirian">Fotokopi Akta Pendirian Perusahaan</label>
-							<input type="file" id="AktaPendirianFile">
+							<input type="file" id="AktaPendirianFile" name ="AktaPendirianFile">
 							<label for="PengesahanKehakiman">Fotokopi Pengesahan Kehakiman (untuk PT)</label>
-							<input type="file" id="PengesahanKehakimanFile">
+							<input type="file" id="PengesahanKehakimanFile" name ="PengesahanKehakimanFile">
 						</div>
 							
 						<div class ="col-md-4">
 							<label for="DomisiliPerusahaan">Fotokopi Domisili Perusahaan</label>
-							<input type="file" id="DomisiliPerusahaanFile">
+							<input type="file" id="DomisiliPerusahaanFile" name ="DomisiliPerusahaanFile">
 							<label for="BKPM">Fotokopi Surat Izin BKPM</label>
-							<input type="file" id="BKPMFile">
+							<input type="file" id="BKPMFile" name ="BKPMFile">
 							<label for="NeracaModal">Neraca Modal Perusahaan</label>
-							<input type="file" id="NeracaModalFile">
+							<input type="file" id="NeracaModalFile" name ="NeracaModalFile">
 						</div>
 					</div>
 					
 					<div id ="DataIzinMendirikanBangunan" class ="form-group">
 						<div class ="col-md-4">
 							<label for="IMB">Fotokopi Izin Mendirikan Bangunan</label>
-							<input type="file" id="IMBFile">
+							<input type="file" id="IMBFile" name ="IMBFile">
 						</div>
 						<div class ="col-md-4">
 							<label for="SuratKeteranganLokasi">Surat Keterangan Lokasi Objek Perizinan</label>
-							<input type="file" id="SuratKeteranganLokasiFile">
+							<input type="file" id="SuratKeteranganLokasiFile" name ="SuratKeteranganLokasiFile">
 						</div>
 					</div>
 					
 					<div id ="DataPajak" class ="form-group">
 						<div class ="col-md-4">
 							<label for="NPWP">Fotokopi NPWP</label>
-							<input type="file" id="NPWPFile">
+							<input type="file" id="NPWPFile" name ="NPWPFile">
 						</div>
 						
 						<div class ="col-md-4">
 							<label for="PBB">Fotokopi Bukti Pelunasan PBB</label>
-							<input type="file" id="PBBFile">
+							<input type="file" id="PBBFile" name ="PBBFile">
 						</div>
 					</div>
 					
 					<div id ="DataLain" class ="form-group">
 						<div class ="col-md-5">
 							<label for="AnalisaDampak">Analisa Dampak terhadap Lalulintas, Lingkungan, Sosial, dan Ekonomi</label>
-							<input type="file" id="AnalisaDampakFile">
+							<input type="file" id="AnalisaDampakFile" name ="AnalisaDampakFile">
 							<label for="RencanaKemitraan">Rencana Kemitraan dengan Usaha Mikro, Kecil, dan Menengah(UKM)</label>
-							<input type="file" id="RencanaKemitraanFile">
+							<input type="file" id="RencanaKemitraanFile" name ="RencanaKemitraanFile">
 						</div>
 						
 						<div class ="col-md-5">
 							<label for="SuratPernyataanKebenaran">Surat Pernyataan Kebenaran Dokumen Persyaratan</label>
-							<input type="file" id="SuratPernyataanKebenaranFile">
+							<input type="file" id="SuratPernyataanKebenaranFile" name ="SuratPernyataanKebenaranFile">
 							<br>
 						</div>
 					</div>

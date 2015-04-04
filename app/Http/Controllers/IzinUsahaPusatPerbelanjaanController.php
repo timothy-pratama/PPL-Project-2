@@ -38,9 +38,26 @@ class IzinUsahaPusatPerbelanjaanController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		dd(Request::all());
+		$KTPPimpinan = $request->file('KTPFile');
+		$PasFoto = $request->file('PasFotoFile');
+		$SuratIzinGangguan = $request->file('SuratIzinGangguanFile');
+		$SuratKepemilikanTempat = $request->file('SuratKepemilikanTempatFile');
+		$AktaPendirian = $request->file('');
+		$FotokopiPengesahanKehakiman = $request->file('FotokopiPengesahanKehakimanFile');
+		$DomisiliPerusahaan = $request->file('DomisiliPerusahaanFile');
+		$BKPM = $request->file('BKPMFile');
+		$NeracaModal = $request->file('NeracaModalFile');
+		$IMB = $request->file('IMBFile');
+		$SuratKeteranganLokasi = $request->file('SuratKeteranganLokasiFile');
+		$NPWP = $request->file('NPWPFile');
+		$PBB = $request->file('PBBFile');
+		$AnalisaDampak = $request->file('AnalisaDampakFile');
+		$RencanaKemitraan = $request->file('RencanaKemitraanFile');
+		$SuratPernyataanKebenaran = $request->file('SuratPernyataanKebenaranFile');
+		
+		dd($request);
 	}
 
 	/**
