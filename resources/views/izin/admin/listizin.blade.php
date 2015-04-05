@@ -23,7 +23,7 @@
 						{{ $i->StatusIzin }} <span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href= "{{ url('Admin/izin/'.$jenis.'/'.$i->id.'/Ditunda') }}">Ditunda</a></li>
+						<li><a href= "{{ url('Admin/izin/'.$jenis.'/'.$i->id.'/Sudah Diterima') }}">Diterima</a></li>
 						<li><a href= "{{ url('Admin/izin/'.$jenis.'/'.$i->id.'/Diproses') }}">Diproses</a></li>
 						<li class="divider"></li>
 						<li><a href="{{ url('Admin/izin/'.$jenis.'/'.$i->id.'/Disetujui') }}">Disetujui</a></li>
