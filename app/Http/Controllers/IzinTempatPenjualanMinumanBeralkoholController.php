@@ -47,7 +47,80 @@ class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-		dd($request);
+		$KTPFile = $request->file('KTPFile');
+		$AktaPendirianFile = $request->file('AktaPendirianFile');
+		$SuratIzinPerdaganganFile = $request->file('SuratIzinPerdaganganFile');
+		$SuratIzinUsahaKepariwisataanFile = $request->file('SuratIzinUsahaKepariwisataanFile');
+		$SuratKepemilikanTempatFile = $request->file('SuratKepemilikanTempatFile');
+		$TandaDaftarPerusahaanFile = $request->file('TandaDaftarPerusahaanFile');
+		$SuratIzinGangguanFile = $request->file('SuratIzinGangguanFile');
+		$NPWPFile = $request->file('NPWPFile');
+		$JenisAlkohol = $request->input('JenisAlkohol');
+
+		/* Get maximum ID from table Izin */
+		$id = DB::table('izin')->max('id');
+
+		/* Get ID for the new izin entry */
+		$id = $id + 1;
+
+		/* Get current timestamp */
+		$date = new \DateTime;
+
+		/* Insert izin to table Izin */
+		DB::table('izin')->insert(
+			[
+			'id' => $id, 
+			'NamaPemohon' => 'Pemohon', 
+			'JenisIzin' => 'STPMB', 
+			'TanggalMasuk' => $date, 
+			'BerlakuSampai' => $date, 
+			'StatusIzin' => 'Sudah Diterima', 
+			'DokumenPersetujuan' => 'localhost:8000', 
+			'created_at' => $date, 
+			'updated_at' => $date
+			]
+		);
+
+		/* Destination Path */
+		$DestinationPath = storage_path().'\\Izin\\Izin Tempat Penjualan Minuman Beralkohol\\'.$id.'\\';
+
+		/* Get each document file name */
+		$KTPFileName = $KTPFile->getClientOriginalName();
+		$AktaPendirianFileName = $AktaPendirianFile->getClientOriginalName();
+		$SuratIzinPerdaganganFileName = $SuratIzinPerdaganganFile->getClientOriginalName();
+		$SuratIzinUsahaKepariwisataanFileName = $SuratIzinUsahaKepariwisataanFile->getClientOriginalName();
+		$SuratKepemilikanTempatFileName = $SuratKepemilikanTempatFile->getClientOriginalName();
+		$TandaDaftarPerusahaanFileName = $TandaDaftarPerusahaanFile->getClientOriginalName();
+		$SuratIzinGangguanFileName = $SuratIzinGangguanFile->getClientOriginalName();
+		$NPWPFileName = $NPWPFile->getClientOriginalName();
+		
+		/* Move each uploaded files to destination path */
+		$KTPFile->move($DestinationPath, $KTPFileName);
+		$AktaPendirianFile->move($DestinationPath, $AktaPendirianFileName);
+		$SuratIzinPerdaganganFile->move($DestinationPath, $SuratIzinPerdaganganFileName);
+		$SuratIzinUsahaKepariwisataanFile->move($DestinationPath, $SuratIzinUsahaKepariwisataanFileName);
+		$SuratKepemilikanTempatFile->move($DestinationPath, $SuratKepemilikanTempatFileName);
+		$TandaDaftarPerusahaanFile->move($DestinationPath, $TandaDaftarPerusahaanFileName);
+		$SuratIzinGangguanFile->move($DestinationPath, $SuratIzinGangguanFileName);
+		$NPWPFile->move($DestinationPath, $NPWPFileName);
+		
+		/* Insert izin to table IzinUsahaPusatPerbelanjaan */
+		DB::table('IzinTempatPenjualanMinumanBeralkohol')->insert(
+			[
+			'idIzin' => $id, 
+			'IzinusahaKepariwisataan' => $DestinationPath.$SuratIzinUsahaKepariwisataanFileName,
+			'NPWP' =>$DestinationPath.$NPWPFileName,
+			'JenisMinumanBeralkohol' => $JenisAlkohol,
+			'KTPPimpinan' => $DestinationPath.$KTPFileName,
+			'AktaPendirianPerusahaan' => $DestinationPath.$AktaPendirianFileName,
+			'IzinusahaPerdagangan' => $DestinationPath.$SuratIzinPerdaganganFileName,
+			'TandaDaftarPerusahaan' => $DestinationPath.$TandaDaftarPerusahaanFileName,
+			'IzinGangguan' => $DestinationPath.$SuratIzinGangguanFileName,
+			'KepemilikanTempat' => $DestinationPath.$SuratKepemilikanTempatFileName,
+			]
+		);
+
+		return('data berhasil disubmit');
 	}
 
 	/**
