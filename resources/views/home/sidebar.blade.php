@@ -10,7 +10,7 @@
 		</li>
 		<li <?php if ($jenis == 'IzinUsahaPasarTradisional') echo 'class = "active"';?> >
 			<a href="<?php if ($jenis == 'IzinUsahaPasarTradisional') echo '#'; 
-			else { if ($stats == "admin") echo url('/Admin/izin/IzinUsahaPasarTradisional'); else if ($stats == "user") echo url('/izin/IzinUsahaPasarTradisional');}?>">Izin Pengelolaan Pasar Tradisional</a>
+			else { if ($stats == "admin") echo url('/Admin/izin/IzinUsahaPasarTradisional'); else if ($stats == "user") echo url('/izin/IzinUsahaPasarTradisional');}?>">Izin Usaha Pasar Tradisional</a>
 		</li>
 		<li <?php if ($jenis == 'IzinTempatPenjualanMinumanBeralkohol') echo 'class = "active"';?> >
 			<a href="<?php if ($jenis == 'IzinTempatPenjualanMinumanBeralkohol') echo '#'; 
