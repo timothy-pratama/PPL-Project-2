@@ -9,6 +9,7 @@
 		$("#DataPribadi").toggle(true);
 		$("#DataIzinUsahaTerpadu").toggle(false);
 		$("#DataPajak").toggle(false);
+		$("#DataLain").toggle(false);
 		
 		$("#DataPribadiButton").click(function(){
 			$("#DataPribadi").toggle();
@@ -17,6 +18,9 @@
 			}
 			if (!$("#DataPajak").is(":hidden")) {
 				$("#DataPajak").toggle();
+			}
+			if (!$("#DataLain").is(":hidden")) {
+				$("#DataLain").toggle();
 			}
 		});
 		
@@ -28,6 +32,9 @@
 			if (!$("#DataPajak").is(":hidden")) {
 				$("#DataPajak").toggle();
 			}
+			if (!$("#DataLain").is(":hidden")) {
+				$("#DataLain").toggle();
+			}
 		});
 		
 		$("#DataPajakButton").click(function(){
@@ -38,6 +45,22 @@
 			if (!$("#DataIzinUsahaTerpadu").is(":hidden")) {
 				$("#DataIzinUsahaTerpadu").toggle();
 			}
+			if (!$("#DataLain").is(":hidden")) {
+				$("#DataLain").toggle();
+			}
+		});
+		
+		$("#DataLainButton").click(function(){
+			$("#DataLain").toggle();
+			if (!$("#DataPribadi").is(":hidden")) {
+				$("#DataPribadi").toggle();
+			}
+			if (!$("#DataIzinUsahaTerpadu").is(":hidden")) {
+				$("#DataIzinUsahaTerpadu").toggle();
+			}
+			if (!$("#DataPajak").is(":hidden")) {
+				$("#DataPajak").toggle();
+			}
 		});
     });
 </script>
@@ -46,7 +69,7 @@
 		<div class ="row">
 			@include ('home.sidebar')
 			
-			<div class = "container-fluid">
+			<div class ="container-fluid">
 				<h2> <p class ="text-center"><span class="label label-primary">Form Izin Tempat Penjualan Minuman Beralkohol</span> </p> </h2>
 				<form role ="form" method ="POST" enctype="multipart/form-data" action="{{ url('izin/IzinTempatPenjualanMinumanBeralkohol/store') }}">
 				<input type="hidden" name="_token" value="{{csrf_token()}}" />
@@ -54,6 +77,7 @@
 						<button class="btn btn-default dropdown-toggle" id ="DataPribadiButton" type="button" data-toggle="dropdown">  <b>Data Pribadi</b> <span class="caret"></span></button>
 						<button class="btn btn-default dropdown-toggle" id ="DataIzinUsahaTerpaduButton" type="button" data-toggle="dropdown">  <b>Data Izin Usaha Terpadu</b> <span class="caret"></span></button>
 						<button class="btn btn-default dropdown-toggle" id ="DataPajakButton" type="button" data-toggle="dropdown">  <b>Data Pajak</b> <span class="caret"></span></button>
+						<button class="btn btn-default dropdown-toggle" id ="DataLainButton" type="button" data-toggle="dropdown">  <b>Data Lainnya</b> <span class="caret"></span></button>
 					</div>
 					
 					<div class ="form-group" id ="DataPribadi">
@@ -95,6 +119,17 @@
 						<div class ="col-md-4">
 							<label for="NPWP">Fotokopi NPWP</label>
 							<input type="file" id="NPWPFile" name ="NPWPFile">
+						</div>
+					</div>
+					
+					<div id ="DataLain" class ="form-group">
+						<div class ="col-md-5">
+							<b>Jenis Minuman Beralkohol</b>
+							<select class="form-control" id ="JenisAlkohol" name ="JenisAlkohol">
+								<option>Golongan A (kadar alkohol 1%-5%)</option>	
+								<option>Golongan B (kadar alkohol 5%-20%)</option>	
+								<option>Golongan C (kadar alkohol 20%-55%)</option>	
+							</select>
 						</div>
 					</div>
 					<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>

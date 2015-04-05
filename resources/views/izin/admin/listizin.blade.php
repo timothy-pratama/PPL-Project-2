@@ -15,15 +15,23 @@
 		<tr>
 			<td>{{ $i->id }}</td>
 			<td>{{ $i->NamaPemohon }}</td>
-			<td>{{ $i->TanggalMasuk }}</td>
-			<td>{{ $i->BerlakuSampai }}</td>
+			<td>
+				<?php
+					$source = $i->TanggalMasuk;
+					$date = new DateTime($source);
+					echo $date->format('d-m-Y');
+				?>
+			</td>
+			<td>
+				<input type="date" name="BerlakuSampai">		
+			</td>
 			<td>
 				<div class="btn-group">
 					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 						{{ $i->StatusIzin }} <span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href= "{{ url('Admin/izin/'.$jenis.'/'.$i->id.'/Sudah Diterima') }}">Diterima</a></li>
+						<li><a href= "{{ url('Admin/izin/'.$jenis.'/'.$i->id.'/Diterima') }}">Diterima</a></li>
 						<li><a href= "{{ url('Admin/izin/'.$jenis.'/'.$i->id.'/Diproses') }}">Diproses</a></li>
 						<li class="divider"></li>
 						<li><a href="{{ url('Admin/izin/'.$jenis.'/'.$i->id.'/Disetujui') }}">Disetujui</a></li>
