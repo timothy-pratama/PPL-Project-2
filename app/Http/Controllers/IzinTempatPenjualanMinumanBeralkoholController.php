@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Redirect;
+use DB;
 
 class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
 
@@ -44,9 +45,9 @@ class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		dd($request);
 	}
 
 	/**

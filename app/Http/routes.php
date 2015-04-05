@@ -39,6 +39,8 @@ Route::get('Admin/izin/TandaPendaftaranWaralaba/{id}/{status}', 'TandaPendaftara
 
 /* User: Storing File */
 Route::post('izin/IzinUsahaPusatPerbelanjaan/store','IzinUsahaPusatPerbelanjaanController@store');
+Route::post('izin/IzinTempatPenjualanMinumanBeralkohol/store','IzinTempatPenjualanMinumanBeralkoholController@store');
+Route::post('izin/IzinUsahaTokoModern/store','IzinUsahaTokoModernController@store');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

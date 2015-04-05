@@ -48,7 +48,8 @@
 			
 			<div class = "container-fluid">
 				<h2> <p class ="text-center"><span class="label label-primary">Form Izin Tempat Penjualan Minuman Beralkohol</span> </p> </h2>
-				<form role ="form" method ="post" enctype="multipart/form-data">
+				<form role ="form" method ="POST" enctype="multipart/form-data" action="{{ url('izin/IzinTempatPenjualanMinumanBeralkohol/store') }}">
+				<input type="hidden" name="_token" value="{{csrf_token()}}" />
 					<div class ="form-group">
 						<button class="btn btn-default dropdown-toggle" id ="DataPribadiButton" type="button" data-toggle="dropdown">  <b>Data Pribadi</b> <span class="caret"></span></button>
 						<button class="btn btn-default dropdown-toggle" id ="DataIzinUsahaTerpaduButton" type="button" data-toggle="dropdown">  <b>Data Izin Usaha Terpadu</b> <span class="caret"></span></button>

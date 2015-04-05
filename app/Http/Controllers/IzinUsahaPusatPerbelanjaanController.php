@@ -78,7 +78,7 @@ class IzinUsahaPusatPerbelanjaanController extends Controller {
 		DB::table('izin')->insert(
 			[
 			'id' => $id, 
-			'NamaPemohon' => 'Timmy', 
+			'NamaPemohon' => 'Pemohon', 
 			'JenisIzin' => 'IUPP', 
 			'TanggalMasuk' => $date, 
 			'BerlakuSampai' => $date, 
