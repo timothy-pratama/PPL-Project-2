@@ -90,7 +90,7 @@ class IzinUsahaPusatPerbelanjaanController extends Controller {
 		);
 
 		/* Destination Path */
-		$DestinationPath = public_path().'\\Izins\\Izin Usaha Pusat Perbelanjaan\\'.$id.'\\';
+		$DestinationPath = storage_path().'\\Izin\\Izin Usaha Pusat Perbelanjaan\\'.$id.'\\';
 
 		/* Get each document file name */
 		$KTPPimpinanFileName = $KTPPimpinan->getClientOriginalName();
