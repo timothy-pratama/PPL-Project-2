@@ -42,6 +42,7 @@ Route::post('izin/IzinUsahaPusatPerbelanjaan/store','IzinUsahaPusatPerbelanjaanC
 Route::post('izin/IzinTempatPenjualanMinumanBeralkohol/store','IzinTempatPenjualanMinumanBeralkoholController@store');
 Route::post('izin/IzinUsahaTokoModern/store','IzinUsahaTokoModernController@store');
 Route::post('izin/IzinUsahaPasarTradisional/store','IzinUsahaPasarTradisionalController@store');
+Route::post('izin/IzinTandaPendaftaranWaralaba/store','TandaPendaftaranWaralabaController@store');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Redirect;
+use DB;
 
 class TandaPendaftaranWaralabaController extends Controller {
 
@@ -45,9 +46,81 @@ class TandaPendaftaranWaralabaController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		/* Get each document from user form's submission */
+		$KTPFile = $request->file('KTPFile');
+		$TandaDaftarPerusahaanFile = $request->file('TandaDaftarPerusahaanFile');
+		$AktaPendirianFile = $request->file('AktaPendirianFile');
+		$IzinTeknisFile = $request->file('IzinTeknisFile');
+		$ProspektusPenawaranWaralabaFile = $request->file('ProspektusPenawaranWaralabaFile');
+		$PerjanjianWaralabaFile = $request->file('PerjanjianWaralabaFile');
+		$HAKIFile = $request->file('HAKIFile');
+		$STPWFile = $request->file('STPWFile');
+
+		/* Get maximum ID from table Izin */
+		$id = DB::table('izin')->max('id');
+
+		/* Get ID for the new izin entry */
+		$id = $id + 1;
+
+		/* Get current timestamp */
+		$date = new \DateTime;
+
+		/* Insert izin to table Izin */
+		DB::table('izin')->insert(
+			[
+			'id' => $id, 
+			'NamaPemohon' => 'Pemohon', 
+			'JenisIzin' => 'STPW', 
+			'TanggalMasuk' => $date, 
+			'BerlakuSampai' => $date, 
+			'StatusIzin' => 'Sudah Diterima', 
+			'DokumenPersetujuan' => 'localhost:8000', 
+			'created_at' => $date, 
+			'updated_at' => $date
+			]
+		);
+
+		/* Destination Path */
+		$DestinationPath = storage_path().'\\Izin\\Izin Tanda Pendaftaran Waralaba\\'.$id.'\\';
+
+		/* Get each document file name */
+		$KTPFileName = $KTPFile->getClientOriginalName();
+		$TandaDaftarPerusahaanFileName = $TandaDaftarPerusahaanFile->getClientOriginalName();
+		$AktaPendirianFileName = $AktaPendirianFile->getClientOriginalName();
+		$IzinTeknisFileName = $IzinTeknisFile->getClientOriginalName();
+		$ProspektusPenawaranWaralabaFileName = $ProspektusPenawaranWaralabaFile->getClientOriginalName();
+		$PerjanjianWaralabaFileName = $PerjanjianWaralabaFile->getClientOriginalName();
+		$HAKIFileName = $HAKIFile->getClientOriginalName();
+		$STPWFileName = $STPWFile->getClientOriginalName();
+
+		/* Move each uploaded files to destination path */
+		$KTPFile->move($DestinationPath, $KTPFileName);
+		$TandaDaftarPerusahaanFile->move($DestinationPath, $TandaDaftarPerusahaanFileName);
+		$AktaPendirianFile->move($DestinationPath, $AktaPendirianFileName);
+		$IzinTeknisFile->move($DestinationPath, $IzinTeknisFileName);
+		$ProspektusPenawaranWaralabaFile->move($DestinationPath, $ProspektusPenawaranWaralabaFileName);
+		$PerjanjianWaralabaFile->move($DestinationPath, $PerjanjianWaralabaFileName);
+		$HAKIFile->move($DestinationPath, $HAKIFileName);
+		$STPWFile->move($DestinationPath, $STPWFileName);		
+
+		/* Insert izin to table IzinUsahaPusatPerbelanjaan */
+		DB::table('TandaPendaftaranWaralaba')->insert(
+			[
+			'idIzin' => $id, 
+			'STPWPemberiWaralaba' => $DestinationPath.$STPWFileName,
+			'HAKI' =>$DestinationPath.$HAKIFileName,
+			'PerjanjianWaralaba' => $DestinationPath.$PerjanjianWaralabaFileName,
+			'IzinTeknis' => $DestinationPath.$IzinTeknisFileName,
+			'ProspektusPenawaranWaralaba' => $DestinationPath.$ProspektusPenawaranWaralabaFileName,
+			'KTPPimpinan' => $DestinationPath.$KTPFileName,
+			'TandaDaftarPerusahaan' => $DestinationPath.$TandaDaftarPerusahaanFileName,
+			'AktaPendirianPerusahaan' => $DestinationPath.$AktaPendirianFileName,
+			]
+		);
+
+		return('data berhasil disubmit');
 	}
 
 	/**

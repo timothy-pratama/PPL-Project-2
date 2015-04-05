@@ -35,7 +35,6 @@ class CreateDatabases extends Migration {
 			$table->string('KTPPimpinan')->default('');
 			$table->string('TandaDaftarPerusahaan')->default('');
 			$table->string('AktaPendirianPerusahaan')->default('');
-			$table->timestamps();
 		});
 
 		Schema::create('IzinTempatPenjualanMinumanBeralkohol', function(Blueprint $table) {
@@ -51,7 +50,6 @@ class CreateDatabases extends Migration {
 			$table->string('TandaDaftarPerusahaan')->default('');
 			$table->string('IzinGangguan')->default('');
 			$table->string('KepemilikanTempat')->default('');
-			$table->timestamps();
 		});
 
 		Schema::create('Pengguna', function(Blueprint $table) {
@@ -59,7 +57,6 @@ class CreateDatabases extends Migration {
 			$table->string('email');
 			$table->string('password');
 			$table->boolean('isAdmin'); 	
-			$table->timestamps();
 		});
 
 		Schema::create('IzinUsahaPusatPerbelanjaan', function(Blueprint $table) {
@@ -82,7 +79,6 @@ class CreateDatabases extends Migration {
 			$table->string('SuratIzinBKPM')->default('');
 			$table->string('NeracaModalPerusahaan')->default('');
 			$table->string('DomisiliPerusahaan')->default('');
-			$table->timestamps();
 		});
 
 		Schema::create('IzinUsahaTokoModern', function(Blueprint $table) {
@@ -105,7 +101,6 @@ class CreateDatabases extends Migration {
 			$table->string('SuratIzinBKPM')->default('');
 			$table->string('NeracaModalPerusahaan')->default('');
 			$table->string('DomisiliPerusahaan')->default('');
-			$table->timestamps();
 		});
 
 		Schema::create('IzinUsahaPasarTradisional', function(Blueprint $table) {
@@ -128,7 +123,6 @@ class CreateDatabases extends Migration {
 			$table->string('SuratIzinBKPM')->default('');
 			$table->string('NeracaModalPerusahaan')->default('');
 			$table->string('DomisiliPerusahaan')->default('');
-			$table->timestamps();
 		});
 	}
 
