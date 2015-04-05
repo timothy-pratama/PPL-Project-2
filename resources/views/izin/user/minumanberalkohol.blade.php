@@ -83,42 +83,37 @@
 					<div class ="form-group" id ="DataPribadi">
 						<div class ="col-md-4">
 							<label for="KTP">Fotokopi KTP Pimpinan</label>
-							<input type="file" id="KTPFile" name="KTPFile">
+							<input type="file" id="KTPFile" name="KTPFile" required>
 						</div>
 					</div>
 					
 					<div id ="DataIzinUsahaTerpadu" class ="form-group">
 						<div class ="col-md-4">
 							<label for="AktaPendirian">Fotokopi Akta Pendirian Perusahaan</label>
-							<input type="file" id="AktaPendirianFile" name="AktaPendirianFile">
+							<input type="file" id="AktaPendirianFile" name="AktaPendirianFile" required>
 							<label for="SuratIzinPerdagangan">Fotokopi Surat Izin Perdagangan</label>
-							<input type="file" id="SuratIzinPerdaganganFile" name="SuratIzinPerdaganganFile">
+							<input type="file" id="SuratIzinPerdaganganFile" name="SuratIzinPerdaganganFile" required>
 						</div>
 						
 						<div class ="col-md-4">
 							<label for="SuratIzinUsahaKepariwisataan">Fotokopi Surat Izin Usaha Kepariwisataan</label>
-							<input type="file" id="SuratIzinUsahaKepariwisataanFile" name="SuratIzinUsahaKepariwisataanFile">
-							<label for="SuratIzinPerdagangan">Fotokopi Surat Izin Perdagangan</label>
-							<input type="file" id="SuratIzinPerdaganganFile" name="SuratIzinPerdaganganFile">
+							<input type="file" id="SuratIzinUsahaKepariwisataanFile" name="SuratIzinUsahaKepariwisataanFile" required>
+							<label for="SuratKepemilikanTempat">Fotokopi Surat Kepemilikan Tempat</label>
+							<input type="file" id="SuratKepemilikanTempatFile" name ="SuratKepemilikanTempatFile" required>
 						</div>
 						
 						<div class ="col-md-4">
 							<label for="TandaDaftarPerusahaan">Fotokopi Tanda Daftar Perusahaan</label>
-							<input type="file" id="TandaDaftarPerusahaanFile" name="TandaDaftarPerusahaanFile">
+							<input type="file" id="TandaDaftarPerusahaanFile" name="TandaDaftarPerusahaanFile" required>
 							<label for="SuratIzinGangguan">Fotokopi Surat Izin Gangguan</label>
-							<input type="file" id="SuratIzinGangguanFile" name ="SuratIzinGangguanFile">
-						</div>
-						
-						<div class ="col-md-4">
-							<label for="SuratKepemilikanTempat">Fotokopi Surat Kepemilikan Tempat</label>
-							<input type="file" id="SuratKepemilikanTempatFile" name ="SuratKepemilikanTempatFile">
+							<input type="file" id="SuratIzinGangguanFile" name ="SuratIzinGangguanFile" required>
 						</div>
 					</div>
 					
 					<div id ="DataPajak" class ="form-group">
 						<div class ="col-md-4">
 							<label for="NPWP">Fotokopi NPWP</label>
-							<input type="file" id="NPWPFile" name ="NPWPFile">
+							<input type="file" id="NPWPFile" name ="NPWPFile" required>
 						</div>
 					</div>
 					

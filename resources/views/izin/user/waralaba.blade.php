@@ -60,40 +60,40 @@
 					<div class ="form-group" id ="DataPribadi">
 						<div class ="col-md-4">
 							<label for="KTP">Fotokopi KTP Pimpinan</label>
-							<input type="file" id="KTPFile" name="KTPFile">
+							<input type="file" id="KTPFile" name="KTPFile" required>
 						</div>
 					</div>
 					
 					<div id ="DataIzinUsahaTerpadu" class ="form-group">
 						<div class ="col-md-4">
 							<label for="TandaDaftarPerusahaan">Fotokopi Tanda Daftar Perusahaan</label>
-							<input type="file" id="TandaDaftarPerusahaanFile" name ="TandaDaftarPerusahaanFile">
+							<input type="file" id="TandaDaftarPerusahaanFile" name ="TandaDaftarPerusahaanFile" required>
 						</div>
 							
 						<div class ="col-md-4">
 							<label for="AktaPendirian">Fotokopi Akta Pendirian Perusahaan</label>
-							<input type="file" id="AktaPendirianFile" name ="AktaPendirianFile">
+							<input type="file" id="AktaPendirianFile" name ="AktaPendirianFile" required>
 						</div>
 					</div>
 					
 					<div id ="DataLain" class ="form-group">
 						<div class ="col-md-5">
 							<label for "IzinTeknis">Fotokopi Izin Teknis</label>
-							<input type="file" id="IzinTeknisFile" name ="IzinTeknisFile">
+							<input type="file" id="IzinTeknisFile" name ="IzinTeknisFile" required>
 							<label for "ProspektusPenawaranWaralaba">Fotokopi Prospektus Penawaran Waralaba</label>
-							<input type="file" id="ProspektusPenawaranWaralabaFile" name ="ProspektusPenawaranWaralabaFile">
+							<input type="file" id="ProspektusPenawaranWaralabaFile" name ="ProspektusPenawaranWaralabaFile" required>
 						</div>
 						
 						<div class ="col-md-5">
 							<label for "PerjanjianWaralaba">Fotokopi Perjanjian Waralaba</label>
-							<input type="file" id="PerjanjianWaralabaFile" name ="PerjanjianWaralabaFile">
+							<input type="file" id="PerjanjianWaralabaFile" name ="PerjanjianWaralabaFile" required>
 							<label for "HAKI">Fotokopi Tanda Bukti Pendaftaran Hak Kekayaan Intelektual</label>
-							<input type="file" id="HAKIFile" name ="HAKIFile">
+							<input type="file" id="HAKIFile" name ="HAKIFile" required>
 						</div>
 						
 						<div class ="col-md-5">
 							<label for "STPW">Fotokopi Surat Tanda Pendaftaran Waralaba Pemberi Waralaba</label>
-							<input type="file" id="STPWFile" name ="STPWFile">
+							<input type="file" id="STPWFile" name ="STPWFile" required>
 						</div>
 					</div>
 					<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>

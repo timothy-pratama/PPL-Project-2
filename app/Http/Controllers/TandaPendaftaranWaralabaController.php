@@ -75,7 +75,7 @@ class TandaPendaftaranWaralabaController extends Controller {
 			'JenisIzin' => 'STPW', 
 			'TanggalMasuk' => $date, 
 			'BerlakuSampai' => $date, 
-			'StatusIzin' => 'Sudah Diterima', 
+			'StatusIzin' => 'Diterima', 
 			'DokumenPersetujuan' => 'localhost:8000', 
 			'created_at' => $date, 
 			'updated_at' => $date
