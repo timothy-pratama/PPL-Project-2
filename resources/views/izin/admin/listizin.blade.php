@@ -31,15 +31,15 @@
 						{{ $i->StatusIzin }} <span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href= "{{ url('Admin/izin/'.$jenis.'/'.$i->id.'/Diterima') }}">Diterima</a></li>
-						<li><a href= "{{ url('Admin/izin/'.$jenis.'/'.$i->id.'/Diproses') }}">Diproses</a></li>
+						<li><a href= "{{ url('Admin/izin/'.$jenis.'/'.$i->id.'/status/Diterima') }}">Diterima</a></li>
+						<li><a href= "{{ url('Admin/izin/'.$jenis.'/'.$i->id.'/status/Diproses') }}">Diproses</a></li>
 						<li class="divider"></li>
-						<li><a href="{{ url('Admin/izin/'.$jenis.'/'.$i->id.'/Disetujui') }}">Disetujui</a></li>
-						<li><a href="{{ url('Admin/izin/'.$jenis.'/'.$i->id.'/Ditolak') }}">Ditolak</a></li>
+						<li><a href="{{ url('Admin/izin/'.$jenis.'/'.$i->id.'/status/Disetujui') }}">Disetujui</a></li>
+						<li><a href="{{ url('Admin/izin/'.$jenis.'/'.$i->id.'/status/Ditolak') }}">Ditolak</a></li>
 					</ul>
 				</div>
 			</td>
-			<td><a href ="#">Download </a></td>
+			<td><a href ="{{url('/Admin/izin/'.$jenis.'/'.$i->id.'/Download') }}">Download </a></td>
 		</tr>
 		@endforeach
 		</table>
