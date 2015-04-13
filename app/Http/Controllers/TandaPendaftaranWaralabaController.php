@@ -22,13 +22,39 @@ class TandaPendaftaranWaralabaController extends Controller {
 	
 	public function admin() 
 	{
-		$izin = Izin::where('JenisIzin','=','ITPW')->get();
+		$izin = Izin::where('JenisIzin','=','STPW')->get();
 		return view('izin.admin.waralaba', compact('izin'));
 	}
 	
 	public function updateStatus($id,$status){
 		Izin::where('id', $id)->update(['StatusIzin' => $status]);
 		return Redirect::to('Admin/izin/TandaPendaftaranWaralaba')->with('message', 'Status updated.');
+	}
+	
+	public function downloadFile($id) {
+	/*
+		$zip = new ZipArchive();
+		$folder = storage_path().'/Izin/STPW/'.$id.'/';
+		$zipFile = "file.zip";
+		$handle = opendir($folder); 
+		while (false !== $f = readdir($handle)) { 
+			if ($f != '.' && $f != '..') { 
+				$filePath = "$folder/$f"; 
+				if (is_file($filePath)) { 
+				  $zipFile->addFile($filePath, $localPath); 
+				} elseif (is_dir($filePath)) { 
+				  // Add sub-directory. 
+				  $zipFile->addEmptyDir($localPath); 
+				  self::folderToZip($filePath, $zipFile, 0); 
+				} 
+			}
+		}
+		
+		closedir($handle); */
+
+		$zip = new ZipArchive();
+
+		//return Redirect::to('Admin/izin/TandaPendaftaranWaralaba')->with('message', 'Download done.');
 	}
 	
 	/**
@@ -83,7 +109,7 @@ class TandaPendaftaranWaralabaController extends Controller {
 		);
 
 		/* Destination Path */
-		$DestinationPath = storage_path().'\\Izin\\Izin Tanda Pendaftaran Waralaba\\'.$id.'\\';
+		$DestinationPath = storage_path().'\\Izin\\STPW\\'.$id.'\\';
 
 		/* Get each document file name */
 		$KTPFileName = $KTPFile->getClientOriginalName();

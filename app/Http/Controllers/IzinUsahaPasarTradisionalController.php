@@ -22,7 +22,7 @@ class IzinUsahaPasarTradisionalController extends Controller {
 	
 	public function admin() 
 	{
-		$izin = Izin::where('JenisIzin','=','IPPT')->get();
+		$izin = Izin::where('JenisIzin','=','IUPT')->get();
 		return view('izin.admin.pasartradisional', compact('izin'));
 	}
 	
@@ -82,7 +82,7 @@ class IzinUsahaPasarTradisionalController extends Controller {
 			'JenisIzin' => 'IUPT', 
 			'TanggalMasuk' => $date, 
 			'BerlakuSampai' => $date, 
-			'StatusIzin' => 'Sudah Diterima', 
+			'StatusIzin' => 'Diterima', 
 			'DokumenPersetujuan' => 'localhost:8000', 
 			'created_at' => $date, 
 			'updated_at' => $date
@@ -90,7 +90,7 @@ class IzinUsahaPasarTradisionalController extends Controller {
 		);
 
 		/* Destination Path */
-		$DestinationPath = storage_path().'\\Izin\\Izin Usaha Pasar Tradisional\\'.$id.'\\';
+		$DestinationPath = storage_path().'\\Izin\\IUPT\\'.$id.'\\';
 
 		/* Get each document file name */
 		$KTPPimpinanFileName = $KTPPimpinan->getClientOriginalName();

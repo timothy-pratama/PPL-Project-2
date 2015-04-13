@@ -82,7 +82,7 @@ class IzinUsahaTokoModernController extends Controller {
 			'JenisIzin' => 'IUTM', 
 			'TanggalMasuk' => $date, 
 			'BerlakuSampai' => $date, 
-			'StatusIzin' => 'Sudah Diterima', 
+			'StatusIzin' => 'Diterima', 
 			'DokumenPersetujuan' => 'localhost:8000', 
 			'created_at' => $date, 
 			'updated_at' => $date
@@ -90,7 +90,7 @@ class IzinUsahaTokoModernController extends Controller {
 		);
 
 		/* Destination Path */
-		$DestinationPath = storage_path().'\\Izin\\Izin Usaha Toko Modern\\'.$id.'\\';
+		$DestinationPath = storage_path().'\\Izin\\IUTM\\'.$id.'\\';
 
 		/* Get each document file name */
 		$KTPPimpinanFileName = $KTPPimpinan->getClientOriginalName();

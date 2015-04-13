@@ -30,6 +30,7 @@ class IzinUsahaPusatPerbelanjaanController extends Controller {
 		Izin::where('id', $id)->update(['StatusIzin' => $status]);
 		return Redirect::to('Admin/izin/IzinUsahaPusatPerbelanjaan')->with('message', 'Status updated.');
 	}
+	
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -82,7 +83,7 @@ class IzinUsahaPusatPerbelanjaanController extends Controller {
 			'JenisIzin' => 'IUPP', 
 			'TanggalMasuk' => $date, 
 			'BerlakuSampai' => $date, 
-			'StatusIzin' => 'Sudah Diterima', 
+			'StatusIzin' => 'Diterima', 
 			'DokumenPersetujuan' => 'localhost:8000', 
 			'created_at' => $date, 
 			'updated_at' => $date
@@ -90,7 +91,7 @@ class IzinUsahaPusatPerbelanjaanController extends Controller {
 		);
 
 		/* Destination Path */
-		$DestinationPath = storage_path().'\\Izin\\Izin Usaha Pusat Perbelanjaan\\'.$id.'\\';
+		$DestinationPath = storage_path().'\\Izin\\IUPP\\'.$id.'\\';
 
 		/* Get each document file name */
 		$KTPPimpinanFileName = $KTPPimpinan->getClientOriginalName();

@@ -10,16 +10,16 @@ class IzinSeeder extends Seeder {
         DB::table('izin')->delete();
  
         $izins = array(
-            ['NamaPemohon' => 'Orang1', 'JenisIzin' => 'IUTM','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Sudah Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
-			['NamaPemohon' => 'Orang2', 'JenisIzin' => 'IUPP','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Sudah Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
-			['NamaPemohon' => 'Orang3', 'JenisIzin' => 'IPPT','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Sudah Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
-			['NamaPemohon' => 'Orang4', 'JenisIzin' => 'ITPMB','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Sudah Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
-			['NamaPemohon' => 'Orang5', 'JenisIzin' => 'ITPW','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Sudah Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
-			['NamaPemohon' => 'Orang6', 'JenisIzin' => 'IUTM','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Sudah Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
-			['NamaPemohon' => 'Orang7', 'JenisIzin' => 'IUPP','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Sudah Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
-			['NamaPemohon' => 'Orang8', 'JenisIzin' => 'IPPT','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Sudah Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
-			['NamaPemohon' => 'Orang9', 'JenisIzin' => 'ITPMB','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Sudah Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
-			['NamaPemohon' => 'Orang10', 'JenisIzin' => 'ITPW','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Sudah Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['NamaPemohon' => 'Orang1', 'JenisIzin' => 'IUTM','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+			['NamaPemohon' => 'Orang2', 'JenisIzin' => 'IUPP','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+			['NamaPemohon' => 'Orang3', 'JenisIzin' => 'IUPT','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+			['NamaPemohon' => 'Orang4', 'JenisIzin' => 'ITPMB','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+			['NamaPemohon' => 'Orang5', 'JenisIzin' => 'STPW','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+			['NamaPemohon' => 'Orang6', 'JenisIzin' => 'IUTM','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+			['NamaPemohon' => 'Orang7', 'JenisIzin' => 'IUPP','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+			['NamaPemohon' => 'Orang8', 'JenisIzin' => 'IUPT','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+			['NamaPemohon' => 'Orang9', 'JenisIzin' => 'ITPMB','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+			['NamaPemohon' => 'Orang10', 'JenisIzin' => 'STPW','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
 		);
  
         // Uncomment the below to run the seeder
