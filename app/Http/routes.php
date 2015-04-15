@@ -31,11 +31,11 @@ Route::get('Admin/izin/IzinUsahaTokoModern', 'IzinUsahaTokoModernController@admi
 Route::get('Admin/izin/TandaPendaftaranWaralaba', 'TandaPendaftaranWaralabaController@admin');
 
 /* Admin: Update Status */
-Route::get('Admin/izin/IzinTempatPenjualanMinumanBeralkohol/{id}/{status}', 'IzinTempatPenjualanMinumanBeralkoholController@updateStatus');
-Route::get('Admin/izin/IzinUsahaPasarTradisional/{id}/{status}', 'IzinUsahaPasarTradisionalController@updateStatus');
-Route::get('Admin/izin/IzinUsahaPusatPerbelanjaan/{id}/{status}', 'IzinUsahaPusatPerbelanjaanController@updateStatus');
-Route::get('Admin/izin/IzinUsahaTokoModern/{id}/{status}', 'IzinUsahaTokoModernController@updateStatus');
-Route::get('Admin/izin/TandaPendaftaranWaralaba/{id}/{status}', 'TandaPendaftaranWaralabaController@updateStatus');
+Route::get('Admin/izin/IzinTempatPenjualanMinumanBeralkohol/{id}/status/{status}', 'IzinTempatPenjualanMinumanBeralkoholController@updateStatus');
+Route::get('Admin/izin/IzinUsahaPasarTradisional/{id}/status/{status}', 'IzinUsahaPasarTradisionalController@updateStatus');
+Route::get('Admin/izin/IzinUsahaPusatPerbelanjaan/{id}/status/{status}', 'IzinUsahaPusatPerbelanjaanController@updateStatus');
+Route::get('Admin/izin/IzinUsahaTokoModern/{id}/status/{status}', 'IzinUsahaTokoModernController@updateStatus');
+Route::get('Admin/izin/TandaPendaftaranWaralaba/{id}/status/{status}', 'TandaPendaftaranWaralabaController@updateStatus');
 
 /* User: Storing File */
 Route::post('izin/IzinUsahaPusatPerbelanjaan/store','IzinUsahaPusatPerbelanjaanController@store');
@@ -43,6 +43,13 @@ Route::post('izin/IzinTempatPenjualanMinumanBeralkohol/store','IzinTempatPenjual
 Route::post('izin/IzinUsahaTokoModern/store','IzinUsahaTokoModernController@store');
 Route::post('izin/IzinUsahaPasarTradisional/store','IzinUsahaPasarTradisionalController@store');
 Route::post('izin/IzinTandaPendaftaranWaralaba/store','TandaPendaftaranWaralabaController@store');
+
+/* Admin: Download File */
+Route::get('Admin/izin/IzinUsahaPusatPerbelanjaan/{id}/Download', 'IzinTempatPenjualanMinumanBeralkoholController@downloadFile');
+Route::get('Admin/izin/IzinTempatPenjualanMinumanBeralkohol/{id}/Download', 'IzinUsahaPasarTradisionalController@downloadFile');
+Route::get('Admin/izin/IzinUsahaTokoModern/{id}/Download', 'IzinUsahaPusatPerbelanjaanController@downloadFile');
+Route::get('Admin/izin/IzinUsahaPasarTradisional/{id}/Download', 'IzinUsahaTokoModernController@downloadFile');
+Route::get('Admin/izin/TandaPendaftaranWaralaba/{id}/Download', 'TandaPendaftaranWaralabaController@downloadFile');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
