@@ -9,7 +9,7 @@
 			@include ('home.sidebar')
 			
 			<div class ="container-fluid">
-				<h3> <p class ="text-center">Selamat datang di dalam Aplikasi Izin Usaha dan Sarana Perdagangan</p> </h3>		
+				<h3> <p class ="text-center">Selamat datang di dalam Aplikasi Izin Usaha dan Sarana Perdagangan</p> </h3>
 				<br><br>
 				<h4> <p class ="text-center">Anda sebagai Admin dapat melakukan perubahan status dari izin yang telah diajukan</p> </h4>
 				<br><br>
