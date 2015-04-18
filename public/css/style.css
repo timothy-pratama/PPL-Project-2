@@ -225,14 +225,14 @@ ul.top-menu > li > .logout {
 	margin-top: 15px;
 }
 
-
 /*sidebar navigation*/
 
 #sidebar {
     width: 210px;
-    height: 100%;
-    position: fixed;
+	height: 100%;
+	position: fixed;
     background: #424a5d;
+	padding: 10px 0px;
 }
 
 #sidebar h5 {
@@ -1643,8 +1643,6 @@ PANELS CONFIGURATIONS
 	box-shadow: 0px 3px 2px #aab2bd;
 }
 
-
-
 /* Calendar Events - Calendar.html*/
 .external-event {
 	cursor: move;
@@ -2239,5 +2237,3 @@ label {
 .site-min-height {
     min-height: 900px;
 }
-
-
