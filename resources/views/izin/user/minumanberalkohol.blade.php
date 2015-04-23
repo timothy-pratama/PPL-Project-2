@@ -78,10 +78,12 @@
 			</div>
 			
 			<div class ="form-group" id ="DataPribadi">
+			    @include('izin.user.formidentitas')
 				<div class ="col-xs-4">
 					<label for="KTP">Fotokopi KTP Pimpinan</label>
 					<input type="file" id="KTPFile" name="KTPFile" required>
 				</div>
+
 			</div>
 			
 			<div id ="DataIzinUsahaTerpadu" class ="form-group">
