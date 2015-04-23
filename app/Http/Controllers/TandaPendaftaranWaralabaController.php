@@ -74,6 +74,9 @@ class TandaPendaftaranWaralabaController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+        $alamatPerusahaan = $request->get('alamat_perusahaan');
+        $namaPerusahaan = $request->get('nama_perusahaan');
+
 		/* Get each document from user form's submission */
 		$KTPFile = $request->file('KTPFile');
 		$TandaDaftarPerusahaanFile = $request->file('TandaDaftarPerusahaanFile');
@@ -97,7 +100,9 @@ class TandaPendaftaranWaralabaController extends Controller {
 		DB::table('izin')->insert(
 			[
 			'id' => $id, 
-			'NamaPemohon' => 'Pemohon', 
+			'NamaPemohon' => 'Pemohon',
+            'AlamatPerusahaan' => $alamatPerusahaan,
+            'NamaPerusahaan'  => $namaPerusahaan,
 			'JenisIzin' => 'STPW', 
 			'TanggalMasuk' => $date, 
 			'BerlakuSampai' => $date, 

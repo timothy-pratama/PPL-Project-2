@@ -47,6 +47,9 @@ class IzinUsahaTokoModernController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+        $namaPerusahaan = $request->get('nama_perusahaan');
+        $alamatPerusahaan = $request->get('alamat_perusahaan');
+
 		/* Get uploaded file from user */
 		$KTPPimpinan = $request->file('KTPFile');
 		$PasFoto = $request->file('PasfotoFile');
@@ -78,7 +81,9 @@ class IzinUsahaTokoModernController extends Controller {
 		DB::table('izin')->insert(
 			[
 			'id' => $id, 
-			'NamaPemohon' => 'Pemohon', 
+			'NamaPemohon' => 'Pemohon',
+            'AlamatPerusahaan' => $alamatPerusahaan,
+            'NamaPerusahaan'  => $namaPerusahaan,
 			'JenisIzin' => 'IUTM', 
 			'TanggalMasuk' => $date, 
 			'BerlakuSampai' => $date, 

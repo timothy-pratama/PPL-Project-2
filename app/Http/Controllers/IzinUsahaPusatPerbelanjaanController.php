@@ -48,6 +48,9 @@ class IzinUsahaPusatPerbelanjaanController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+        $alamatPerusahaan = $request->get('alamat_perusahaan');
+        $namaPerusahaan = $request->get('nama_perusahaan');
+
 		/* Get uploaded file from user */
 		$KTPPimpinan = $request->file('KTPFile');
 		$PasFoto = $request->file('PasfotoFile');
@@ -79,7 +82,9 @@ class IzinUsahaPusatPerbelanjaanController extends Controller {
 		DB::table('izin')->insert(
 			[
 			'id' => $id, 
-			'NamaPemohon' => 'Pemohon', 
+			'NamaPemohon' => 'Pemohon',
+            'AlamatPerusahaan' => $alamatPerusahaan,
+            'NamaPerusahaan'  => $namaPerusahaan,
 			'JenisIzin' => 'IUPP', 
 			'TanggalMasuk' => $date, 
 			'BerlakuSampai' => $date, 

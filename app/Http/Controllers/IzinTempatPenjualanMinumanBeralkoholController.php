@@ -47,6 +47,9 @@ class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+        $namaPerusahaan = $request->get('nama_perusahaan');
+        $alamatPerusahaan = $request->get('alamat_perusahaan');
+
 		$KTPFile = $request->file('KTPFile');
 		$AktaPendirianFile = $request->file('AktaPendirianFile');
 		$SuratIzinPerdaganganFile = $request->file('SuratIzinPerdaganganFile');
@@ -70,7 +73,9 @@ class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
 		DB::table('izin')->insert(
 			[
 			'id' => $id, 
-			'NamaPemohon' => 'Pemohon', 
+			'NamaPemohon' => 'Pemohon',
+            'AlamatPerusahaan' => $alamatPerusahaan,
+            'NamaPerusahaan'  => $namaPerusahaan,
 			'JenisIzin' => 'STPMB', 
 			'TanggalMasuk' => $date, 
 			'BerlakuSampai' => $date, 
