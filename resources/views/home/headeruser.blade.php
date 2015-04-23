@@ -6,13 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bandung BerUsaha</title>
 
-	<link href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/bootstrap-theme.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/bootstrap-theme.min.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/font-awesome.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/styleuser.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/style-responsive.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/user/css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/user/css/bootstrap-responsive.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/user/css/font-awesome.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/user/css/style.css') }}" rel="stylesheet">
+	<!--<link href="{{ asset('/css/style-responsive.css') }}" rel="stylesheet">-->
 	
 	<link rel='stylesheet' type='text/css' href='assets/js/gritter/css/jquery.gritter.css' />
 	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'>
@@ -22,8 +20,14 @@
 <body>
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
-			<div class="container">
-				<h4><a href="{{Route('userhome')}}">Bandung Berusaha</a></h4>
+			<div class="container">			
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a href="{{Route('userhome')}}" class="brand">Bandung Berusaha</a
+				
 				<div class="nav-collapse">
 					<ul class="nav pull-right">
 						<li class="dropdown">						
@@ -32,6 +36,7 @@
 								Account
 								<b class="caret"></b>
 							</a>
+							
 							<ul class="dropdown-menu">
 								<li><a href="javascript:;">Settings</a></li>
 								<li><a href="javascript:;">Help</a></li>
@@ -39,10 +44,10 @@
 						</li>
 					</ul>
 					<form class="navbar-search pull-right">
-						<input type="text" class="search-query" placeholder="Search">
+						<input class="search-query" placeholder="Search" type="text">
 					</form>
 				</div><!--/.nav-collapse -->	
-			</div> <!-- /container -->
+			</div>
 		</div> <!-- /navbar-inner -->
 	</div> <!-- /navbar -->
 	
@@ -84,11 +89,20 @@
 			</div> <!-- /container -->		
 		</div> <!-- /subnavbar-inner -->
 	</div> <!-- /subnavbar -->
-	<div class="row">
+		
+	<div class="main" id = "content">
+		<div class="main-inner">
+			<div class="container">
 		@yield('content')
-
+			</div>
+		</div>
+	</div>
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="{{ asset('js/user/js/bootstrap.js') }}"></script>
+	<script src="{{ asset('js/user/js/base.js') }}"></script>
+	<script src="{{ asset('js/user/js/jquery-1.7.2.min.js') }}"></script>
+	<script src="{{ asset('js/user/js/faq.js') }}"></script>
 </body>
 </html>
