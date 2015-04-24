@@ -55,3 +55,6 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+/* Single Sign On */
+Route::get('/login_callback',['uses'=>'LoginController@call_back','as'=>'login_callback']);

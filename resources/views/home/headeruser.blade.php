@@ -37,8 +37,8 @@
 							</a>
 							
 							<ul class="dropdown-menu">
-								<li><a href="javascript:;">Settings</a></li>
-								<li><a href="javascript:;">Help</a></li>
+								<li><a href="javascript:;">Login</a></li>
+								<li><a href="javascript:;">Register</a></li>
 							</ul>						
 						</li>
 					</ul>
