@@ -80,7 +80,7 @@ class TandaPendaftaranWaralabaController extends Controller {
 		/* Get each document from user form's submission */
 		$KTPFile = $request->file('KTPFile');
 		$TandaDaftarPerusahaanFile = $request->file('TandaDaftarPerusahaanFile');
-		$AktaPendirianFile = $request->file('AktaPendirianFile');
+		$AktaPendirianFile = $request->get('AktaPendirianFile');
 		$IzinTeknisFile = $request->file('IzinTeknisFile');
 		$ProspektusPenawaranWaralabaFile = $request->file('ProspektusPenawaranWaralabaFile');
 		$PerjanjianWaralabaFile = $request->file('PerjanjianWaralabaFile');
@@ -119,7 +119,6 @@ class TandaPendaftaranWaralabaController extends Controller {
 		/* Get each document file name */
 		$KTPFileName = $KTPFile->getClientOriginalName();
 		$TandaDaftarPerusahaanFileName = $TandaDaftarPerusahaanFile->getClientOriginalName();
-		$AktaPendirianFileName = $AktaPendirianFile->getClientOriginalName();
 		$IzinTeknisFileName = $IzinTeknisFile->getClientOriginalName();
 		$ProspektusPenawaranWaralabaFileName = $ProspektusPenawaranWaralabaFile->getClientOriginalName();
 		$PerjanjianWaralabaFileName = $PerjanjianWaralabaFile->getClientOriginalName();
@@ -129,7 +128,6 @@ class TandaPendaftaranWaralabaController extends Controller {
 		/* Move each uploaded files to destination path */
 		$KTPFile->move($DestinationPath, $KTPFileName);
 		$TandaDaftarPerusahaanFile->move($DestinationPath, $TandaDaftarPerusahaanFileName);
-		$AktaPendirianFile->move($DestinationPath, $AktaPendirianFileName);
 		$IzinTeknisFile->move($DestinationPath, $IzinTeknisFileName);
 		$ProspektusPenawaranWaralabaFile->move($DestinationPath, $ProspektusPenawaranWaralabaFileName);
 		$PerjanjianWaralabaFile->move($DestinationPath, $PerjanjianWaralabaFileName);
@@ -147,11 +145,12 @@ class TandaPendaftaranWaralabaController extends Controller {
 			'ProspektusPenawaranWaralaba' => $DestinationPath.$ProspektusPenawaranWaralabaFileName,
 			'KTPPimpinan' => $DestinationPath.$KTPFileName,
 			'TandaDaftarPerusahaan' => $DestinationPath.$TandaDaftarPerusahaanFileName,
-			'AktaPendirianPerusahaan' => $DestinationPath.$AktaPendirianFileName,
+			'AktaPendirianPerusahaan' => $AktaPendirianFile,
 			]
 		);
 
-		return('data berhasil disubmit');
+        $message = "Data berhasil disimpan";
+		return view('izin.user.result',compact('message'));
 	}
 
 	/**

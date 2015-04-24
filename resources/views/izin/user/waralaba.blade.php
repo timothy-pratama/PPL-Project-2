@@ -62,22 +62,22 @@
 			<label for="TandaDaftarPerusahaan">Fotokopi Tanda Daftar Perusahaan</label>
 			<input type="file" id="TandaDaftarPerusahaanFile" name ="TandaDaftarPerusahaanFile" required>
 			
-			<label for="AktaPendirian">Fotokopi Akta Pendirian Perusahaan</label>
-			<input type="file" id="AktaPendirianFile" name ="AktaPendirianFile" required>
+			<label for="AktaPendirian">Akta Pendirian Perusahaan</label>
+			<input type="text" id="AktaPendirianFile" name ="AktaPendirianFile" required placeholder="nomor akta pendirian perusahaan">
 		</div>
 		
 		<div id ="DataLain" class ="form-group">
-			<label for "IzinTeknis">Fotokopi Izin Teknis</label>
+			<label for ="IzinTeknis">Fotokopi Izin Teknis</label>
 			<input type="file" id="IzinTeknisFile" name ="IzinTeknisFile" required>
-			<label for "ProspektusPenawaranWaralaba">Fotokopi Prospektus Penawaran Waralaba</label>
+			<label for ="ProspektusPenawaranWaralaba">Fotokopi Prospektus Penawaran Waralaba</label>
 			<input type="file" id="ProspektusPenawaranWaralabaFile" name ="ProspektusPenawaranWaralabaFile" required>
 		
-			<label for "PerjanjianWaralaba">Fotokopi Perjanjian Waralaba</label>
+			<label for ="PerjanjianWaralaba">Fotokopi Perjanjian Waralaba</label>
 			<input type="file" id="PerjanjianWaralabaFile" name ="PerjanjianWaralabaFile" required>
-			<label for "HAKI">Fotokopi Tanda Bukti Pendaftaran Hak Kekayaan Intelektual</label>
+			<label for ="HAKI">Fotokopi Tanda Bukti Pendaftaran Hak Kekayaan Intelektual</label>
 			<input type="file" id="HAKIFile" name ="HAKIFile" required>
 		
-			<label for "STPW">Fotokopi Surat Tanda Pendaftaran Waralaba Pemberi Waralaba</label>
+			<label for ="STPW">Fotokopi Surat Tanda Pendaftaran Waralaba Pemberi Waralaba</label>
 			<input type="file" id="STPWFile" name ="STPWFile" required>
 		</div>
 		<button type="submit" class="btn btn-default">Daftar</button>
