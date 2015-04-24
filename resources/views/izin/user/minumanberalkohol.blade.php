@@ -67,10 +67,10 @@
 </script>
 	<div class="col-xs-2"></div>
 	<div class="col-xs-10">
-		<h2 class ="text-center"><span class="label label-primary">Form Izin Tempat Penjualan Minuman Beralkohol</span></h2>
+		<center><p style="font-size: 20px;" class="label label-info label-title">Form Izin Tempat Penjualan Minuman Beralkohol</p></center>
 		<br><br>
 		<form role ="form" method ="POST" enctype="multipart/form-data" action="{{ url('izin/IzinTempatPenjualanMinumanBeralkohol/store') }}">
-		<input type="hidden" name="_token" value="{{csrf_token()}}" />
+		    <input type="hidden" name="_token" value="{{csrf_token()}}" />
 			<div class ="form-group">
 				<button class="btn btn-default dropdown-toggle" id ="DataPribadiButton" type="button" data-toggle="dropdown">  <b>Data Pribadi</b> <span class="caret"></span></button>
 				<button class="btn btn-default dropdown-toggle" id ="DataIzinUsahaTerpaduButton" type="button" data-toggle="dropdown">  <b>Data Izin Usaha Terpadu</b> <span class="caret"></span></button>
@@ -89,7 +89,7 @@
 			
 			<div id ="DataIzinUsahaTerpadu" class ="form-group">
 				<div class ="col-xs-4">
-					<label for="AktaPendirian">Akta Pendirian Perusahaan</label><br>
+					<label for="AktaPendirian">Akta Pendirian Perusahaan</label>
 					<input style="width: 220px" type="text" id="AktaPendirianPerusahaan" name="AktaPendirianPerusahaan" required placeholder="nomor akta pendirian perusahaan">
 					<label for="SuratIzinPerdagangan">Fotokopi Surat Izin Perdagangan</label>
 					<input type="file" id="SuratIzinPerdaganganFile" name="SuratIzinPerdaganganFile" required>
@@ -105,14 +105,14 @@
 				<div class ="col-xs-4">
 					<label for="TandaDaftarPerusahaan">Fotokopi Tanda Daftar Perusahaan</label>
 					<input type="file" id="TandaDaftarPerusahaanFile" name="TandaDaftarPerusahaanFile" required>
-					<label for="SuratIzinGangguan">Surat Izin Gangguan</label><br>
+					<label for="SuratIzinGangguan">Surat Izin Gangguan</label>
 					<input type="text" id="NomorSuratIzinGangguan" name ="NomorSuratIzinGangguan" required style="width: 220px;" placeholder="Nomor Surat Izin Gangguan">
 				</div>
 			</div>
 			
 			<div id ="DataPajak" class ="form-group">
 				<div class ="col-xs-4">
-					<label for="NPWP">NPWP</label><br>
+					<label for="NPWP">NPWP</label>
 					<input type="text" id="NPWP" name ="NPWP" required placeholder="Nomor Pokok Wajib Pajak" style="width: 220px">
 				</div>
 			</div>
@@ -120,15 +120,14 @@
 			<div id ="DataLain" class ="form-group">
 				<div class ="col-xs-5">
 					<b>Jenis Minuman Beralkohol</b>
-					<select class="form-control" id ="JenisAlkohol" name ="JenisAlkohol">
+					<select style="width: auto" class="form-control" id ="JenisAlkohol" name ="JenisAlkohol">
 						<option>Golongan A (kadar alkohol 1%-5%)</option>	
 						<option>Golongan B (kadar alkohol 5%-20%)</option>	
 						<option>Golongan C (kadar alkohol 20%-55%)</option>	
 					</select>
 				</div>
 			</div>
-			<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-			<button type="submit" class="btn btn-default">Daftar</button>
+			<input type="submit" class="btn btn-default" value="Simpan">
 		</form>
 	</div>
 </div>

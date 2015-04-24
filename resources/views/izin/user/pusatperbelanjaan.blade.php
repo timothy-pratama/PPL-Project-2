@@ -93,7 +93,7 @@
 		});
     });
 </script>	
-	<center><p style="font-size: 20px;" class="label label-info">Form Izin Usaha Pusat Perbelanjaan</p></center>
+	<center><p style="font-size: 20px;" class="label label-info label-title">Form Izin Usaha Pusat Perbelanjaan</p></center>
 	<br><br>
 	<form role ="form" method="POST" action ="{{ url('izin/IzinUsahaPusatPerbelanjaan/store') }}" enctype="multipart/form-data">
 		<input type="hidden" name="_token" value="{{csrf_token()}}">

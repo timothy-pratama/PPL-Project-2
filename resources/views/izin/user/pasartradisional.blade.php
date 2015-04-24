@@ -93,7 +93,7 @@
 		});
     });
 </script>
-	<center><p style="font-size: 20px;" class="label label-info">Form Izin Pengelolaan Pasar Tradisional</p></center>
+	<center><p style="font-size: 20px;" class="label label-info label-title">Form Izin Pengelolaan Pasar Tradisional</p></center>
 	<br><br>
 	<form role ="form" method ="POST" enctype="multipart/form-data" action="{{ url('izin/IzinUsahaPasarTradisional/store') }}">
 	<input type="hidden" name="_token" value="{{csrf_token()}}" />

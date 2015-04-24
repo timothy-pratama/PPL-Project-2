@@ -55,31 +55,31 @@
 			<div class="container">
 				<ul class="mainnav">
 					<li <?php if ($jenis == 'IzinUsahaTokoModern') echo 'class = "active mt"';?> >
-						<i class="icon-dashboard"></i>
+						{{--<i class="icon-dashboard"></i>--}}
 						<a href="<?php if ($jenis == 'IzinUsahaTokoModern') echo '#'; 
 						else { if ($stats == "admin") echo url('/Admin/izin/IzinUsahaTokoModern'); else if ($stats == "user") echo url('/izin/IzinUsahaTokoModern');}?>">Izin Usaha Toko Modern</a>
 					</li>
 					
 					<li <?php if ($jenis == 'IzinUsahaPusatPerbelanjaan') echo 'class = "active"';?> >
-					<i class="icon-list-alt"></i>
+					{{--<i class="icon-list-alt"></i>--}}
 						<a href="<?php if ($jenis == 'IzinUsahaPusatPerbelanjaan') echo '#'; 
 						else { if ($stats == "admin") echo url('/Admin/izin/IzinUsahaPusatPerbelanjaan'); else if ($stats == "user") echo url('/izin/IzinUsahaPusatPerbelanjaan');}?>">Izin Usaha Pusat Perbelanjaan</a>
 					</li>
 											
 					<li <?php if ($jenis == 'IzinUsahaPasarTradisional') echo 'class = "active"';?> >
-					<i class="icon-facetime-video"></i>
+					{{--<i class="icon-facetime-video"></i>--}}
 						<a href="<?php if ($jenis == 'IzinUsahaPasarTradisional') echo '#'; 
 						else { if ($stats == "admin") echo url('/Admin/izin/IzinUsahaPasarTradisional'); else if ($stats == "user") echo url('/izin/IzinUsahaPasarTradisional');}?>">Izin Usaha Pasar Tradisional</a>
 					</li>
 									
 					<li <?php if ($jenis == 'IzinTempatPenjualanMinumanBeralkohol') echo 'class = "active"';?> >
-					<i class="icon-bar-chart"></i>
+					{{--<i class="icon-bar-chart"></i>--}}
 						<a href="<?php if ($jenis == 'IzinTempatPenjualanMinumanBeralkohol') echo '#'; 
 						else { if ($stats == "admin") echo url('/Admin/izin/IzinTempatPenjualanMinumanBeralkohol'); else if ($stats == "user") echo url('/izin/IzinTempatPenjualanMinumanBeralkohol');}?>">Izin Tempat Penjualan Minuman Beralkohol</a>
 					</li>
 					
 					<li <?php if ($jenis == 'TandaPendaftaranWaralaba') echo 'class = "active"';?> >
-						<i class="icon-code"></i>
+						{{--<i class="icon-code"></i>--}}
 							<a href="<?php if ($jenis == 'TandaPendaftaranWaralaba') echo '#'; 
 							else { if ($stats == "admin") echo url('/Admin/izin/TandaPendaftaranWaralaba'); else if ($stats == "user") echo url('/izin/TandaPendaftaranWaralaba');}?>">Izin Tanda Pendaftaran Waralaba</a>
 						</li>

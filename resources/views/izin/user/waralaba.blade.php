@@ -42,7 +42,7 @@
 		});
     });
 </script>
-	<center><p style="font-size: 20px;" class="label label-info">Form Izin Tanda Pendaftaran Waralaba</p></center>
+	<center><p style="font-size: 20px;" class="label label-info label-title">Form Izin Tanda Pendaftaran Waralaba</p></center>
 	<br><br>
 	<form role ="form" method ="post" enctype="multipart/form-data" action="{{ url('izin/IzinTandaPendaftaranWaralaba/store') }}">
 		<input type="hidden" name="_token" value="{{csrf_token()}}">
