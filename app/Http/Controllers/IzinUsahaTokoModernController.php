@@ -53,16 +53,16 @@ class IzinUsahaTokoModernController extends Controller {
 		/* Get uploaded file from user */
 		$KTPPimpinan = $request->file('KTPFile');
 		$PasFoto = $request->file('PasfotoFile');
-		$SuratIzinGangguan = $request->file('SuratIzinGangguanFile');
+		$SuratIzinGangguan = $request->get('SuratIzinGangguanFile');
 		$SuratKepemilikanTempat = $request->file('SuratKepemilikanTempatFile');
-		$AktaPendirian = $request->file('AktaPendirianFile');
+		$AktaPendirian = $request->get('AktaPendirianFile');
 		$FotokopiPengesahanKehakiman = $request->file('PengesahanKehakimanFile');
 		$DomisiliPerusahaan = $request->file('DomisiliPerusahaanFile');
 		$BKPM = $request->file('BKPMFile');
 		$NeracaModal = $request->file('NeracaModalFile');
-		$IMB = $request->file('IMBFile');
+		$IMB = $request->get('IMBFile');
 		$SuratKeteranganLokasi = $request->file('SuratKeteranganLokasiFile');
-		$NPWP = $request->file('NPWPFile');
+		$NPWP = $request->get('NPWPFile');
 		$PBB = $request->file('PBBFile');
 		$AnalisaDampak = $request->file('AnalisaDampakFile');
 		$RencanaKemitraan = $request->file('RencanaKemitraanFile');
@@ -100,16 +100,12 @@ class IzinUsahaTokoModernController extends Controller {
 		/* Get each document file name */
 		$KTPPimpinanFileName = $KTPPimpinan->getClientOriginalName();
 		$PasFotoFileName = $PasFoto->getClientOriginalName();
-		$SuratIzinGangguanFileName = $SuratIzinGangguan->getClientOriginalName();
 		$SuratKepemilikanTempatFileName = $SuratKepemilikanTempat->getClientOriginalName();
-		$AktaPendirianFileName = $AktaPendirian->getClientOriginalName();
 		$FotokopiPengesahanKehakimanFileName = $FotokopiPengesahanKehakiman->getClientOriginalName();
 		$DomisiliPerusahaanFileName = $DomisiliPerusahaan->getClientOriginalName();
 		$BKPMFileName = $BKPM->getClientOriginalName();
 		$NeracaModalFileName = $NeracaModal->getClientOriginalName();
-		$IMBFileName = $IMB->getClientOriginalName();
 		$SuratKeteranganLokasiFileName = $SuratKeteranganLokasi->getClientOriginalName();
-		$NPWPFileName = $NPWP->getClientOriginalName();
 		$PBBFileName = $PBB->getClientOriginalName();
 		$AnalisaDampakFileName = $AnalisaDampak->getClientOriginalName();
 		$RencanaKemitraanFileName = $RencanaKemitraan->getClientOriginalName();
@@ -118,16 +114,12 @@ class IzinUsahaTokoModernController extends Controller {
 		/* Move each uploaded files to destination path */
 		$KTPPimpinan->move($DestinationPath, $KTPPimpinanFileName);
 		$PasFoto->move($DestinationPath, $PasFotoFileName);
-		$SuratIzinGangguan->move($DestinationPath, $SuratIzinGangguanFileName);
 		$SuratKepemilikanTempat->move($DestinationPath, $SuratKepemilikanTempatFileName);
-		$AktaPendirian->move($DestinationPath, $AktaPendirianFileName);
 		$FotokopiPengesahanKehakiman->move($DestinationPath, $FotokopiPengesahanKehakimanFileName);
 		$DomisiliPerusahaan->move($DestinationPath, $DomisiliPerusahaanFileName);
 		$BKPM->move($DestinationPath, $BKPMFileName);
 		$NeracaModal->move($DestinationPath, $NeracaModalFileName);
-		$IMB->move($DestinationPath, $IMBFileName);
 		$SuratKeteranganLokasi->move($DestinationPath, $SuratKeteranganLokasiFileName);
-		$NPWP->move($DestinationPath, $NPWPFileName);
 		$PBB->move($DestinationPath, $PBBFileName);
 		$AnalisaDampak->move($DestinationPath, $AnalisaDampakFileName);
 		$RencanaKemitraan->move($DestinationPath, $RencanaKemitraanFileName);
@@ -138,25 +130,26 @@ class IzinUsahaTokoModernController extends Controller {
 			[
 			'idIzin' => $id, 
 			'PengesahanKehakiman' => $DestinationPath.$FotokopiPengesahanKehakimanFileName,
-			'AktaPendirianPerusahaan' =>$DestinationPath.$AktaPendirianFileName,
+			'AktaPendirianPerusahaan' => $AktaPendirian,
 			'SuratKepemilikanTempat' => $DestinationPath.$SuratKepemilikanTempatFileName,
-			'IzinGangguan' => $DestinationPath.$SuratIzinGangguanFileName,
+			'IzinGangguan' => $SuratIzinGangguan,
 			'PasFoto' => $DestinationPath.$PasFotoFileName,
 			'SuratPernyataanKebenaran' => $DestinationPath.$SuratPernyataanKebenaranFileName,
 			'KemitraanUMKM' => $DestinationPath.$RencanaKemitraanFileName,
 			'AnalisaDampakLingkungan' => $DestinationPath.$AnalisaDampakFileName,
 			'SuratKeteranganLokasi' => $DestinationPath.$SuratKeteranganLokasiFileName,
 			'KTPPimpinan' => $DestinationPath.$KTPPimpinanFileName,
-			'NPWP' => $DestinationPath.$NPWPFileName,
+			'NPWP' => $NPWP,
 			'BuktiPelunasanPBB' => $DestinationPath.$PBBFileName,
-			'IMB' => $DestinationPath.$IMBFileName,
+			'IMB' => $IMB,
 			'SuratIzinBKPM' => $DestinationPath.$BKPMFileName,
 			'NeracaModalPerusahaan' => $DestinationPath.$NeracaModalFileName,
 			'DomisiliPerusahaan' => $DestinationPath.$DomisiliPerusahaanFileName
 			]
 		);
 
-		return('data berhasil disubmit');
+        $message = 'Data berhasil disimpan';
+		return view('izin.user.result',compact('message'));
 	}
 
 	/**
