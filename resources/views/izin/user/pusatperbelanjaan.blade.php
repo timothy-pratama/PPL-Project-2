@@ -144,8 +144,8 @@
 			<label for="NPWP">NPWP</label>
 			<input type="text" id="NPWPFile" name ="NPWPFile" required placeholder="Nomor Pokok Wajib Pajak">
 		
-			<label for="PBB">Fotokopi Bukti Pelunasan PBB</label>
-			<input type="file" id="PBBFile" name ="PBBFile" required>
+			<label for="PBB">Bukti Pelunasan PBB</label>
+			<input type="text" id="PBBFile" name ="PBBFile" required placeholder="Nomor PBB">
 		</div>
 		
 		<div id ="DataLain" class ="form-group">

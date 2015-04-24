@@ -63,7 +63,7 @@ class IzinUsahaTokoModernController extends Controller {
 		$IMB = $request->get('IMBFile');
 		$SuratKeteranganLokasi = $request->file('SuratKeteranganLokasiFile');
 		$NPWP = $request->get('NPWPFile');
-		$PBB = $request->file('PBBFile');
+		$PBB = $request->get('PBBFile');
 		$AnalisaDampak = $request->file('AnalisaDampakFile');
 		$RencanaKemitraan = $request->file('RencanaKemitraanFile');
 		$SuratPernyataanKebenaran = $request->file('SuratPernyataanKebenaranFile');
@@ -106,7 +106,6 @@ class IzinUsahaTokoModernController extends Controller {
 		$BKPMFileName = $BKPM->getClientOriginalName();
 		$NeracaModalFileName = $NeracaModal->getClientOriginalName();
 		$SuratKeteranganLokasiFileName = $SuratKeteranganLokasi->getClientOriginalName();
-		$PBBFileName = $PBB->getClientOriginalName();
 		$AnalisaDampakFileName = $AnalisaDampak->getClientOriginalName();
 		$RencanaKemitraanFileName = $RencanaKemitraan->getClientOriginalName();
 		$SuratPernyataanKebenaranFileName = $SuratPernyataanKebenaran->getClientOriginalName();
@@ -120,7 +119,6 @@ class IzinUsahaTokoModernController extends Controller {
 		$BKPM->move($DestinationPath, $BKPMFileName);
 		$NeracaModal->move($DestinationPath, $NeracaModalFileName);
 		$SuratKeteranganLokasi->move($DestinationPath, $SuratKeteranganLokasiFileName);
-		$PBB->move($DestinationPath, $PBBFileName);
 		$AnalisaDampak->move($DestinationPath, $AnalisaDampakFileName);
 		$RencanaKemitraan->move($DestinationPath, $RencanaKemitraanFileName);
 		$SuratPernyataanKebenaran->move($DestinationPath, $SuratPernyataanKebenaranFileName);
@@ -140,7 +138,7 @@ class IzinUsahaTokoModernController extends Controller {
 			'SuratKeteranganLokasi' => $DestinationPath.$SuratKeteranganLokasiFileName,
 			'KTPPimpinan' => $DestinationPath.$KTPPimpinanFileName,
 			'NPWP' => $NPWP,
-			'BuktiPelunasanPBB' => $DestinationPath.$PBBFileName,
+			'BuktiPelunasanPBB' => $PBB,
 			'IMB' => $IMB,
 			'SuratIzinBKPM' => $DestinationPath.$BKPMFileName,
 			'NeracaModalPerusahaan' => $DestinationPath.$NeracaModalFileName,

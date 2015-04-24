@@ -84,6 +84,7 @@ class CreateDatabases extends Migration {
 			$table->string('NPWP')->default('');
             $table->tinyInteger('StatusNPWP')->default(1);
 			$table->string('BuktiPelunasanPBB')->default('');
+            $table->tinyInteger('StatusPelunasanPBB')->default(1);
 			$table->string('IMB')->default('');
             $table->tinyInteger('StatusIMB')->default(1);
 			$table->string('SuratIzinBKPM')->default('');
@@ -110,6 +111,7 @@ class CreateDatabases extends Migration {
 			$table->string('NPWP')->default('');
             $table->tinyInteger('StatusNPWP')->default(1);
 			$table->string('BuktiPelunasanPBB')->default('');
+            $table->tinyInteger('StatusPelunasanPBB')->default(1);
 			$table->string('IMB')->default('');
             $table->tinyInteger('StatusIMB')->default(1);
 			$table->string('SuratIzinBKPM')->default('');
@@ -136,6 +138,7 @@ class CreateDatabases extends Migration {
 			$table->string('NPWP')->default('');
             $table->tinyInteger('StatusNPWP')->default(1);
 			$table->string('BuktiPelunasanPBB')->default('');
+            $table->tinyInteger('StatusPelunasanPBB')->default(1);
 			$table->string('IMB')->default('');
             $table->tinyInteger('StatusIMB')->default(1);
 			$table->string('SuratIzinBKPM')->default('');
