@@ -10,7 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/', 'WelcomeController@index');
+Route::get('/', ['uses'=>'IzinController@user','as'=>'index']);
 
 Route::get('home', 'HomeController@index');
 
@@ -23,7 +23,7 @@ Route::get('izin/IzinUsahaTokoModern', 'IzinUsahaTokoModernController@user');
 Route::get('izin/TandaPendaftaranWaralaba', 'TandaPendaftaranWaralabaController@user');
 
 /* Admin Routing */
-Route::get('Admin/izin', 'IzinController@admin');
+Route::get('Admin/izin', ['uses'=>'IzinController@admin', 'as'=>'adminhome']);
 Route::get('Admin/izin/IzinTempatPenjualanMinumanBeralkohol', 'IzinTempatPenjualanMinumanBeralkoholController@admin');
 Route::get('Admin/izin/IzinUsahaPasarTradisional', 'IzinUsahaPasarTradisionalController@admin');
 Route::get('Admin/izin/IzinUsahaPusatPerbelanjaan', 'IzinUsahaPusatPerbelanjaanController@admin');
@@ -55,14 +55,3 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
-
-/*
-Route::resource('Izin','IzinController');
-
-Route::resource('IzinTempatPenjualanMinumanBeralkohol','IzinTempatPenjualanMinumanBeralkoholController');
-Route::resource('IzinUsahaPasarTradisional','IzinUsahaPasarTradisionalController');
-Route::resource('IzinUsahaPusatPerbelanjaan','IzinUsahaPusatPerbelanjaanController');
-Route::resource('IzinUsahaTokoModern','IzinUsahaTokoModernController');
-Route::resource('Pengguna','PenggunaController');
-Route::resource('TandaPendaftaranWaralaba','TandaPendaftaranWaralabaController'); */
-
