@@ -1,11 +1,19 @@
-<div class="col-xs-12">
-    <div class="form-group" style="margin-bottom: -10px">
-        <label for="NamaPerusahaan">Nama Perusahaan</label>
-        <input type="text" id="nama_perusahaan" name="nama_perusahaan" required style="position: absolute; left: 15%; width: 35%" placeholder="Nama perusahaan pemohon izin">
-    </div>
-    <br>
-    <div class="form-group" style="margin-bottom: 50px">
-        <label for="AlamatPerusahaan">Alamat Perusahaan</label>
-        <textarea id="alamat_perusahaan" name="alamat_perusahaan" required style="position: absolute; left: 15%; width: 35%; height: 65%" placeholder="Alamat perusahaan saat ini"></textarea>
-    </div>
-</div>
+<br>
+
+<form class="form-horizontal" action="" method="">
+	<div class="control-group">
+		<label class="control-label">
+			Nama Perusahaan:
+		</label>
+		<div class="controls">
+			<input type="text" class="span6" id="nama_perusahaan" name="nama_perusahaan">
+		</div>
+		<label class="control-label">
+			Alamat Perusahaan:
+		</label>
+		<div class="controls">
+			<textarea type="text" class="span6" id="alamat_perusahaan" name="alamat_perusahaan" >
+			</textarea>
+		</div>
+	</div>
+</form>

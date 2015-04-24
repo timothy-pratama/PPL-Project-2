@@ -6,14 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bandung BerUsaha</title>
 
-	<link href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/bootstrap-theme.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/bootstrap-theme.min.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/font-awesome.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/style.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/style-responsive.css') }}" rel="stylesheet">
-	
+	<link href="{{ asset('/css/admin/css/bootstrap.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/admin/css/style.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/admin/css/style-responsive.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/admin/css/table-responsive.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/admin/css/to-do.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/admin/css/zabuto_calendar.css') }}" rel="stylesheet">
+		
 	<link rel='stylesheet' type='text/css' href='assets/js/gritter/css/jquery.gritter.css' />
 	
 	<!-- Fonts -->
@@ -26,7 +25,7 @@
 			<div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
 		</div>
 		<!--logo start-->
-		<a href="index.html" class="logo"><b>Bandung BerUsaha</b></a>
+		<a href="#" class="logo"><b>Bandung BerUsaha</b></a>
 		<!--logo end-->
 		
 		<div class="nav notify-row" id="top_menu">
