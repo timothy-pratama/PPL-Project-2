@@ -127,7 +127,7 @@
 					</select>
 				</div>
 			</div>
-			<input type="submit" class="btn btn-default" value="Simpan">
+			<input type="submit" class="btn btn-default" value="Daftar">
 		</form>
 	</div>
 </div>

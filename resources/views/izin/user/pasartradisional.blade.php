@@ -114,13 +114,13 @@
 		</div>
 		
 		<div id ="DataIzinUsahaTerpadu" class ="form-group">
-			<label for="SuratIzinGangguan">Fotokopi Surat Izin Gangguan</label>
-			<input type="file" id="SuratIzinGangguanFile" name ="SuratIzinGangguanFile" required>
+			<label for="SuratIzinGangguan">Surat Izin Gangguan</label>
+			<input type="text" id="SuratIzinGangguanFile" name ="SuratIzinGangguanFile" required placeholder="Nomor surat izin gangguan">
 			<label for="SuratKepemilikanTempat">Fotokopi Surat Kepemilikan Tempat</label>
 			<input type="file" id="SuratKepemilikanTempatFile" name ="SuratKepemilikanTempatFile" required>
 				
-			<label for="AktaPendirian">Fotokopi Akta Pendirian Perusahaan</label>
-			<input type="file" id="AktaPendirianFile" name ="AktaPendirianFile" required>
+			<label for="AktaPendirian">Akta Pendirian Perusahaan</label>
+			<input type="text" id="AktaPendirianFile" name ="AktaPendirianFile" required placeholder="Nomor akta pendirian usaha">
 			<label for="PengesahanKehakiman">Fotokopi Pengesahan Kehakiman (untuk PT)</label>
 			<input type="file" id="PengesahanKehakimanFile" name ="PengesahanKehakimanFile" required>
 			
@@ -133,16 +133,16 @@
 		</div>
 		
 		<div id ="DataIzinMendirikanBangunan" class ="form-group">
-			<label for="IMB">Fotokopi Izin Mendirikan Bangunan</label>
-			<input type="file" id="IMBFile" name ="IMBFile" required>
+			<label for="IMB">Izin Mendirikan Bangunan</label>
+			<input type="text" id="IMBFile" name ="IMBFile" required placeholder="Nomor IMB">
 
 			<label for="SuratKeteranganLokasi">Surat Keterangan Lokasi Objek Perizinan</label>
 			<input type="file" id="SuratKeteranganLokasiFile" name ="SuratKeteranganLokasiFile" required>
 		</div>
 		
 		<div id ="DataPajak" class ="form-group">
-			<label for="NPWP">Fotokopi NPWP</label>
-			<input type="file" id="NPWPFile" name ="NPWPFile" required>
+			<label for="NPWP">NPWP</label>
+			<input type="text" id="NPWPFile" name ="NPWPFile" required placeholder="Nomor Pokok Wajib Pajak">
 		
 			<label for="PBB">Fotokopi Bukti Pelunasan PBB</label>
 			<input type="file" id="PBBFile" name ="PBBFile" required>
