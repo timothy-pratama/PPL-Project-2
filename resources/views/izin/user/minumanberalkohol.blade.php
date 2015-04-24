@@ -4,6 +4,7 @@
 @extends ('home.headeruser')
 
 @section ('content')
+
 <script>
 	$(document).ready(function(){
 		$("#DataPribadi").toggle(true);
@@ -88,8 +89,8 @@
 			
 			<div id ="DataIzinUsahaTerpadu" class ="form-group">
 				<div class ="col-xs-4">
-					<label for="AktaPendirian">Fotokopi Akta Pendirian Perusahaan</label>
-					<input type="file" id="AktaPendirianFile" name="AktaPendirianFile" required>
+					<label for="AktaPendirian">Akta Pendirian Perusahaan</label><br>
+					<input style="width: 220px" type="text" id="AktaPendirianPerusahaan" name="AktaPendirianPerusahaan" required placeholder="nomor akta pendirian perusahaan">
 					<label for="SuratIzinPerdagangan">Fotokopi Surat Izin Perdagangan</label>
 					<input type="file" id="SuratIzinPerdaganganFile" name="SuratIzinPerdaganganFile" required>
 				</div>
@@ -104,15 +105,15 @@
 				<div class ="col-xs-4">
 					<label for="TandaDaftarPerusahaan">Fotokopi Tanda Daftar Perusahaan</label>
 					<input type="file" id="TandaDaftarPerusahaanFile" name="TandaDaftarPerusahaanFile" required>
-					<label for="SuratIzinGangguan">Fotokopi Surat Izin Gangguan</label>
-					<input type="file" id="SuratIzinGangguanFile" name ="SuratIzinGangguanFile" required>
+					<label for="SuratIzinGangguan">Surat Izin Gangguan</label><br>
+					<input type="text" id="NomorSuratIzinGangguan" name ="NomorSuratIzinGangguan" required style="width: 220px;" placeholder="Nomor Surat Izin Gangguan">
 				</div>
 			</div>
 			
 			<div id ="DataPajak" class ="form-group">
 				<div class ="col-xs-4">
-					<label for="NPWP">Fotokopi NPWP</label>
-					<input type="file" id="NPWPFile" name ="NPWPFile" required>
+					<label for="NPWP">NPWP</label><br>
+					<input type="text" id="NPWP" name ="NPWP" required placeholder="Nomor Pokok Wajib Pajak" style="width: 220px">
 				</div>
 			</div>
 			

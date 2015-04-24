@@ -37,6 +37,7 @@ class CreateDatabases extends Migration {
 			$table->string('KTPPimpinan')->default('');
 			$table->string('TandaDaftarPerusahaan')->default('');
 			$table->string('AktaPendirianPerusahaan')->default('');
+            $table->tinyInteger('StatusAktaPendirianPerusahaan')->default(1);
 		});
 
 		Schema::create('IzinTempatPenjualanMinumanBeralkohol', function(Blueprint $table) {
@@ -45,12 +46,15 @@ class CreateDatabases extends Migration {
 			$table->foreign('idIzin')->references('id')->on('Izin')->onDelete('cascade');
 			$table->string('IzinUsahaKepariwisataan')->default('');
 			$table->string('NPWP')->default('');
+            $table->tinyInteger('StatusNPWP')->default(1);
 			$table->string('JenisMinumanBeralkohol')->default('');
 			$table->string('KTPPimpinan')->default('');
 			$table->string('AktaPendirianPerusahaan')->default('');
+            $table->tinyInteger('StatusAktaPendirianPerusahaan')->default(1);
 			$table->string('IzinUsahaPerdagangan')->default('');
 			$table->string('TandaDaftarPerusahaan')->default('');
 			$table->string('IzinGangguan')->default('');
+            $table->tinyInteger('StatusIzinGangguan')->default(1);
 			$table->string('KepemilikanTempat')->default('');
 		});
 
@@ -67,8 +71,10 @@ class CreateDatabases extends Migration {
 			$table->foreign('idIzin')->references('id')->on('Izin')->onDelete('cascade');
 			$table->string('PengesahanKehakiman')->default('');
 			$table->string('AktaPendirianPerusahaan')->default('');
+            $table->tinyInteger('StatusAktaPendirianPerusahaan')->default(1);
 			$table->string('SuratKepemilikanTempat')->default('');
 			$table->string('IzinGangguan')->default('');
+            $table->tinyInteger('StatusIzinGangguan')->default(1);
 			$table->string('PasFoto')->default('');
 			$table->string('SuratPernyataanKebenaran')->default('');
 			$table->string('KemitraanUMKM')->default('');
@@ -76,8 +82,10 @@ class CreateDatabases extends Migration {
 			$table->string('SuratKeteranganLokasi')->default('');
 			$table->string('KTPPimpinan')->default('');
 			$table->string('NPWP')->default('');
+            $table->tinyInteger('StatusNPWP')->default(1);
 			$table->string('BuktiPelunasanPBB')->default('');
 			$table->string('IMB')->default('');
+            $table->tinyInteger('StatusIMB')->default(1);
 			$table->string('SuratIzinBKPM')->default('');
 			$table->string('NeracaModalPerusahaan')->default('');
 			$table->string('DomisiliPerusahaan')->default('');
@@ -89,8 +97,10 @@ class CreateDatabases extends Migration {
 			$table->foreign('idIzin')->references('id')->on('Izin')->onDelete('cascade');
 			$table->string('PengesahanKehakiman')->default('');
 			$table->string('AktaPendirianPerusahaan')->default('');
+            $table->tinyInteger('StatusAktaPendirianPerusahaan')->default(1);
 			$table->string('SuratKepemilikanTempat')->default('');
 			$table->string('IzinGangguan')->default('');
+            $table->tinyInteger('StatusIzinGangguan')->default(1);
 			$table->string('PasFoto')->default('');
 			$table->string('SuratPernyataanKebenaran')->default('');
 			$table->string('KemitraanUMKM')->default('');
@@ -98,8 +108,10 @@ class CreateDatabases extends Migration {
 			$table->string('SuratKeteranganLokasi')->default('');
 			$table->string('KTPPimpinan')->default('');
 			$table->string('NPWP')->default('');
+            $table->tinyInteger('StatusNPWP')->default(1);
 			$table->string('BuktiPelunasanPBB')->default('');
 			$table->string('IMB')->default('');
+            $table->tinyInteger('StatusIMB')->default(1);
 			$table->string('SuratIzinBKPM')->default('');
 			$table->string('NeracaModalPerusahaan')->default('');
 			$table->string('DomisiliPerusahaan')->default('');
@@ -111,8 +123,10 @@ class CreateDatabases extends Migration {
 			$table->foreign('idIzin')->references('id')->on('Izin')->onDelete('cascade');
 			$table->string('PengesahanKehakiman')->default('');
 			$table->string('AktaPendirianPerusahaan')->default('');
+            $table->tinyInteger('StatusAktaPendirianPerusahaan')->default(1);
 			$table->string('SuratKepemilikanTempat')->default('');
 			$table->string('IzinGangguan')->default('');
+            $table->tinyInteger('StatusIzinGangguan')->default(1);
 			$table->string('PasFoto')->default('');
 			$table->string('SuratPernyataanKebenaran')->default('');
 			$table->string('KemitraanUMKM')->default('');
@@ -120,8 +134,10 @@ class CreateDatabases extends Migration {
 			$table->string('SuratKeteranganLokasi')->default('');
 			$table->string('KTPPimpinan')->default('');
 			$table->string('NPWP')->default('');
+            $table->tinyInteger('StatusNPWP')->default(1);
 			$table->string('BuktiPelunasanPBB')->default('');
 			$table->string('IMB')->default('');
+            $table->tinyInteger('StatusIMB')->default(1);
 			$table->string('SuratIzinBKPM')->default('');
 			$table->string('NeracaModalPerusahaan')->default('');
 			$table->string('DomisiliPerusahaan')->default('');

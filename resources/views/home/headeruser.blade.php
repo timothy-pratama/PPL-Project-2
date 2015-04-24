@@ -23,7 +23,7 @@
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<h4><a href="{{Route('userhome')}}">Bandung Berusaha</a></h4>
+				<h4><a style="color: #000000" href="{{Route('userhome')}}">Bandung Berusaha</a></h4>
 				<div class="nav-collapse">
 					<ul class="nav pull-right">
 						<li class="dropdown">						

@@ -1,5 +1,8 @@
-<?php $jenis = 'all';?>
-<?php $stats = 'user';?>
+<?php
+    use Illuminate\Support\Facades\Session;
+    $jenis = 'all';
+    $stats = 'user';
+?>
 
 @extends ('home.headeruser')
 
