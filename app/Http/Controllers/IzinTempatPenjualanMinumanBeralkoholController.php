@@ -69,11 +69,14 @@ class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
 		/* Get current timestamp */
 		$date = new \DateTime;
 
-		/* Insert izin to table Izin */
+        $json = DB::table('pengguna')->where('id',1)->first();
+        $nama = $json->nama;
+
+        /* Insert izin to table Izin */
 		DB::table('izin')->insert(
 			[
 			'id' => $id, 
-			'NamaPemohon' => 'Pemohon',
+			'NamaPemohon' => $nama,
             'AlamatPerusahaan' => $alamatPerusahaan,
             'NamaPerusahaan'  => $namaPerusahaan,
 			'JenisIzin' => 'STPMB', 
@@ -106,7 +109,7 @@ class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
 		/* Insert izin to table IzinUsahaPusatPerbelanjaan */
 		DB::table('IzinTempatPenjualanMinumanBeralkohol')->insert(
 			[
-			'idIzin' => $id, 
+			'idIzin' => $id,
 			'IzinusahaKepariwisataan' => $DestinationPath.$SuratIzinUsahaKepariwisataanFileName,
 			'NPWP' =>$NPWP,
 			'JenisMinumanBeralkohol' => $JenisAlkohol,

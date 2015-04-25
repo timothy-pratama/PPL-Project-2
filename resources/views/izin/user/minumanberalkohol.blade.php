@@ -1,6 +1,8 @@
 <?php $jenis = 'IzinTempatPenjualanMinumanBeralkohol';?>
 <?php $stats = 'user';?>
 
+
+
 @extends ('home.headeruser')
 
 @section ('content')

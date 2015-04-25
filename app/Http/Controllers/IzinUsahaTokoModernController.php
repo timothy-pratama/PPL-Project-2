@@ -77,11 +77,14 @@ class IzinUsahaTokoModernController extends Controller {
 		/* Get current timestamp */
 		$date = new \DateTime;
 
+        $json = DB::table('pengguna')->where('id',1)->first();
+        $nama = $json->nama;
+
 		/* Insert izin to table Izin */
 		DB::table('izin')->insert(
 			[
 			'id' => $id, 
-			'NamaPemohon' => 'Pemohon',
+			'NamaPemohon' => $nama,
             'AlamatPerusahaan' => $alamatPerusahaan,
             'NamaPerusahaan'  => $namaPerusahaan,
 			'JenisIzin' => 'IUTM', 

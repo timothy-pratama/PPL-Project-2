@@ -60,9 +60,7 @@ class CreateDatabases extends Migration {
 
 		Schema::create('Pengguna', function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('email');
-			$table->string('password');
-			$table->boolean('isAdmin'); 	
+			$table->string('nama');
 		});
 
 		Schema::create('IzinUsahaPusatPerbelanjaan', function(Blueprint $table) {

@@ -10,7 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/', ['uses'=>'IzinController@user','as'=>'index']);
+Route::get('/', ['uses'=>'LoginController@login','as'=>'login']);
 
 Route::get('home', 'HomeController@index');
 

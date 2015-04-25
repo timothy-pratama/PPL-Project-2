@@ -24,6 +24,11 @@ class IzinSeeder extends Seeder {
  
         // Uncomment the below to run the seeder
         DB::table('izin')->insert($izins);
+
+        DB::table('pengguna')->delete();
+        DB::table('pengguna')->insert([
+            'nama'=>'a'
+        ]);
     }
  
 }
