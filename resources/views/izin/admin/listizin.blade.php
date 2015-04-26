@@ -6,6 +6,7 @@
 	<tr style="border-style: solid;">
 		<td>ID</td>
 		<td>Nama Pemohon</td>
+		<td>Perusahaan</td>
 		<td>Tanggal Masuk</td>
 		<td>Berlaku Sampai</td>
 		<td>Status Izin</td>
@@ -15,6 +16,7 @@
 	<tr>
 		<td>{{ $i->id }}</td>
 		<td>{{ $i->NamaPemohon }}</td>
+		<td>{{$i->NamaPerusahaan}}</td>
 		<td>
 			<?php
 				$source = $i->TanggalMasuk;

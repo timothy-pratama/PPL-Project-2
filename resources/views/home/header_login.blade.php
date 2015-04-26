@@ -1,3 +1,5 @@
+@include('home.global_variable')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +27,7 @@
 			<div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
 		</div>
 		<!--logo start-->
-		<a href="{{route('adminhome')}}" class="logo"><b>Bandung BerUsaha</b></a>
+		<a href="#" class="logo"><b>Bandung BerUsaha</b></a>
 		<!--logo end-->
 		
 		<div class="nav notify-row" id="top_menu">
@@ -167,12 +169,13 @@
 				</li>
 				<!-- inbox dropdown end -->
 			</ul>
-			
+
+			<?php $login_local_admin = 'http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=c4Im8zC52L6PR3gW&redirect_uri=http://localhost:8000/login_callback_admin&response_type=code'; ?>
 			<!--  notification end -->
 		</div>
 		<div class="top-menu">
 			<ul class="nav pull-right top-menu">
-				<li><a class="logout" href="{{route('login_admin')}}">Logout</a></li>
+				<li><a class="logout" href="{{$login_local_admin}}">Login</a></li>
 			</ul>
 		</div>
 	</header>

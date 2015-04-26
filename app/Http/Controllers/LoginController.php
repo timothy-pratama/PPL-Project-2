@@ -43,8 +43,15 @@ class LoginController extends Controller {
         return view('izin.user.login');
     }
 
+    public function login_admin()
+    {
+        return view('izin.admin.login');
+    }
+
     public function call_back(Request $request)
     {
+        //test ke server
+        //user
         $name = 'izinusahasaranaperdagangan';
         $redirect_uri = 'http://usahasarana.pplbandung.biz.tm/login_callback';
         $client_id = 'rcQHD0QUT8xxg8Aj';
@@ -52,6 +59,7 @@ class LoginController extends Controller {
         $login = 'http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=rcQHD0QUT8xxg8Aj&redirect_uri=http://usahasarana.pplbandung.biz.tm/login_callback&response_type=code';
 
         //test ke localhost
+        //user
         $name_local = 'saranaperdaganganlocalhost';
         $client_id_local = 'ulP9hlsW74ahy2ND';
         $redirect_uri_local = 'http://localhost:8000/login_callback';
@@ -85,6 +93,67 @@ class LoginController extends Controller {
         DB::table('pengguna')->where('id',1)->update(['nama'=>$nama]);
 
         return view('izin.user.index');
+    }
+
+    public function call_back_admin(Request $request)
+    {
+        //test ke server
+        //user
+        $name = 'izinusahasaranaperdagangan';
+        $redirect_uri = 'http://usahasarana.pplbandung.biz.tm/login_callback';
+        $client_id = 'rcQHD0QUT8xxg8Aj';
+        $client_secret = 'LRWXgkS867lPcs26';
+        $login = 'http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=rcQHD0QUT8xxg8Aj&redirect_uri=http://usahasarana.pplbandung.biz.tm/login_callback&response_type=code';
+
+        //admin
+        $name_admin = 'izinusahasaranaperdaganganadmin';
+        $redirect_uri_admin = 'http://usahasarana.pplbandung.biz.tm/login_callback_admin';
+        $client_id_admin = 'kr2iEByIos7y3GVP';
+        $client_secret_admin = 'CW4tabGeFdgN9fJM';
+        $login_admin = 'http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=kr2iEByIos7y3GVP&redirect_uri=http://usahasarana.pplbandung.biz.tm/login_callback_admin&response_type=code';
+
+        //test ke localhost
+        //user
+        $name_local = 'saranaperdaganganlocalhost';
+        $client_id_local = 'ulP9hlsW74ahy2ND';
+        $redirect_uri_local = 'http://localhost:8000/login_callback';
+        $client_secret_local = 'JDPqeCpwEFUY6F4Q';
+        $login_local = 'http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=ulP9hlsW74ahy2ND&redirect_uri=http://localhost:8000/login_callback&response_type=code';
+
+        //admin
+        $name_local_admin = 'saranaperdaganganlocalhostadmin';
+        $redirect_uri_local_admin = 'http://localhost:8000/login_callback_admin';
+        $client_id_local_admin = 'c4Im8zC52L6PR3gW';
+        $client_secret_local_admin = 'LUeTMC9YWlg5Y3UH';
+        $login_local_admin = 'http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=c4Im8zC52L6PR3gW&redirect_uri=http://localhost:8000/login_callback_admin&response_type=code';
+
+        $code = $request->get('code',null);
+
+        $client = new Client();
+        $request = $client->createRequest('POST','http://dukcapil.pplbandung.biz.tm/oauth/access_token');
+        $postBody = $request->getBody();
+        $postBody->setField('grant_type','authorization_code');
+        $postBody->setField('client_id',$client_id_local_admin);
+        $postBody->setField('client_secret',$client_secret_local_admin);
+        $postBody->setField('redirect_uri',$redirect_uri_local_admin);
+        $postBody->setField('code',$code);
+
+        $response = $client->send($request);
+
+        $body = $response->getBody();
+        $body_json = json_decode($body);
+        $access_token = $body_json->access_token;
+
+        $client = new Client();
+        $response = $client->get('http://dukcapil.pplbandung.biz.tm/api/penduduk/'.$access_token);
+        $data = $response->getBody();
+
+        $json = json_decode($data);
+        $nama = $json->nama;
+
+        DB::table('pengguna')->where('id',1)->update(['nama'=>$nama]);
+
+        return view('izin.admin.index');
     }
 
 	/**

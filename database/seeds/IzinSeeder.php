@@ -10,16 +10,16 @@ class IzinSeeder extends Seeder {
         DB::table('izin')->delete();
  
         $izins = array(
-            ['NamaPemohon' => 'Orang1', 'JenisIzin' => 'IUTM','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
-			['NamaPemohon' => 'Orang2', 'JenisIzin' => 'IUPP','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
-			['NamaPemohon' => 'Orang3', 'JenisIzin' => 'IUPT','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
-			['NamaPemohon' => 'Orang4', 'JenisIzin' => 'ITPMB','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
-			['NamaPemohon' => 'Orang5', 'JenisIzin' => 'STPW','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
-			['NamaPemohon' => 'Orang6', 'JenisIzin' => 'IUTM','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
-			['NamaPemohon' => 'Orang7', 'JenisIzin' => 'IUPP','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
-			['NamaPemohon' => 'Orang8', 'JenisIzin' => 'IUPT','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
-			['NamaPemohon' => 'Orang9', 'JenisIzin' => 'ITPMB','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
-			['NamaPemohon' => 'Orang10', 'JenisIzin' => 'STPW','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['NamaPemohon' => 'Tony', 'NamaPerusahaan'=> 'Astra Ago Lestari', 'JenisIzin' => 'IUTM','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+			['NamaPemohon' => 'William', 'NamaPerusahaan'=> 'BISI International', 'JenisIzin' => 'IUPP','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+			['NamaPemohon' => 'Icha', 'NamaPerusahaan'=> 'BW Plantations', 'JenisIzin' => 'IUPT','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+			['NamaPemohon' => 'Riady', 'NamaPerusahaan'=> 'Gozco Plantations', 'JenisIzin' => 'ITPMB','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+			['NamaPemohon' => 'Timothy', 'NamaPerusahaan'=> 'Jaya Agra Wattie', 'JenisIzin' => 'STPW','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+			['NamaPemohon' => 'Stefan', 'NamaPerusahaan'=> 'Sampoerna Agro', 'JenisIzin' => 'IUTM','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+			['NamaPemohon' => 'Pratama', 'NamaPerusahaan'=> 'Central Omega Resources', 'JenisIzin' => 'IUPP','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+			['NamaPemohon' => 'Hartono', 'NamaPerusahaan'=> 'ABM Investama', 'JenisIzin' => 'IUPT','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+			['NamaPemohon' => 'Sastra', 'NamaPerusahaan'=> 'Alam Karya Unggul', 'JenisIzin' => 'ITPMB','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
+			['NamaPemohon' => 'Kusuma', 'NamaPerusahaan'=> 'Bumi Citra Permai', 'JenisIzin' => 'STPW','TanggalMasuk'=>new DateTime, 'BerlakuSampai'=>new DateTime,'StatusIzin'=>'Diterima','DokumenPersetujuan'=>'Dok','created_at' => new DateTime, 'updated_at' => new DateTime],
 		);
  
         // Uncomment the below to run the seeder

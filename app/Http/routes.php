@@ -11,6 +11,7 @@
 |
 */
 Route::get('/', ['uses'=>'LoginController@login','as'=>'login']);
+Route::get('/Admin',['uses'=>'LoginController@login_admin','as'=>'login_admin']);
 
 Route::get('home', 'HomeController@index');
 
@@ -58,3 +59,4 @@ Route::controllers([
 
 /* Single Sign On */
 Route::get('/login_callback',['uses'=>'LoginController@call_back','as'=>'login_callback']);
+Route::get('/login_callback_admin',['uses'=>'LoginController@call_back_admin','as'=>'login_callback_admin']);

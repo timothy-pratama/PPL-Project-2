@@ -58,7 +58,7 @@ $login_local = 'http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=ulP9
 							</a>
 
 							<ul class="dropdown-menu">
-								<li><a href="#">Logout</a></li>
+								<li><a href="{{route('login')}}">Logout</a></li>
 							</ul>
 						</li>
 					</ul>
