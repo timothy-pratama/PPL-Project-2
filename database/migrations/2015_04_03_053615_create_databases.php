@@ -58,6 +58,13 @@ class CreateDatabases extends Migration {
 			$table->string('KepemilikanTempat')->default('');
 		});
 
+        Schema::create('Admin', function(Blueprint $table) {
+            $table->increments('id');
+            $table->string('username');
+            $table->string('password');
+            $table->string('nama');
+        });
+
 		Schema::create('Pengguna', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('nama');

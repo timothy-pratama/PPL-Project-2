@@ -175,7 +175,7 @@
 		</div>
 		<div class="top-menu">
 			<ul class="nav pull-right top-menu">
-				<li><a class="logout" href="{{$login_local_admin}}">Login</a></li>
+				<li><a class="logout" href="{{route('login_admin_1')}}">Login</a></li>
 			</ul>
 		</div>
 	</header>

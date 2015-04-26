@@ -11,7 +11,9 @@
 |
 */
 Route::get('/', ['uses'=>'LoginController@login','as'=>'login']);
-Route::get('/Admin',['uses'=>'LoginController@login_admin','as'=>'login_admin']);
+Route::get('/Form_Login',['uses'=>'LoginController@login_admin','as'=>'login_admin_1']);
+Route::get('/Admin',['uses'=>'LoginController@login_admin_1','as'=>'login_admin']);
+
 Route::get('izin/logout',['uses'=>'LoginController@logout','as'=>'logout']);
 Route::get('izin/logout_admin',['uses'=>'LoginController@logout_admin','as'=>'logout_admin']);
 
@@ -62,3 +64,4 @@ Route::controllers([
 /* Single Sign On */
 Route::get('/login_callback',['uses'=>'LoginController@call_back','as'=>'login_callback']);
 Route::get('/login_callback_admin',['uses'=>'LoginController@call_back_admin','as'=>'login_callback_admin']);
+Route::get('/login_callback_admin1',['uses'=>'LoginController@call_back_admin1','as'=>'login_callback_admin1']);

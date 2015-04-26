@@ -41,13 +41,13 @@ class LoginController extends Controller {
     public function logout()
     {
         DB::table('pengguna')->where('id',1)->update(['nama'=>'current_username']);
-        return view('izin.user.login');
+        return redirect()->route('login');
     }
 
     public function logout_admin()
     {
         DB::table('pengguna')->where('id',1)->update(['nama'=>'current_username']);
-        return view('izin.admin.login');
+        return redirect()->route('login_admin');
     }
 
     public function login()
@@ -57,7 +57,27 @@ class LoginController extends Controller {
 
     public function login_admin()
     {
+        return view('izin.admin.login1');
+    }
+
+    public function login_admin_1()
+    {
         return view('izin.admin.login');
+    }
+
+    public function call_back_admin1(Request $request)
+    {
+        $data = DB::table('admin')->where('username',$request->get('username'))->where('password',$request->get('password'))->first();
+        if(count($data)>0)
+        {
+            $nama = $data->nama;
+            DB::table('pengguna')->where('id',1)->update(['nama'=>$nama]);
+            return redirect()->route('adminhome');
+        }
+        else
+        {
+            return redirect()->route('login_admin_1')->with('message','error');
+        }
     }
 
     public function call_back(Request $request)
@@ -104,7 +124,7 @@ class LoginController extends Controller {
 
         DB::table('pengguna')->where('id',1)->update(['nama'=>$nama]);
 
-        return view('izin.user.index');
+        return redirect()->route('userhome');
     }
 
     public function call_back_admin(Request $request)
@@ -165,7 +185,7 @@ class LoginController extends Controller {
 
         DB::table('pengguna')->where('id',1)->update(['nama'=>$nama]);
 
-        return view('izin.admin.index');
+        return redirect()->route('adminhome');
     }
 
 	/**
