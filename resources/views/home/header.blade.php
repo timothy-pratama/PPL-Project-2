@@ -13,7 +13,7 @@ $nama = $json->nama;
 if($nama === 'current_username')
 {
     //redirect
-    redirection('http://localhost:8000');
+    redirection('http://localhost:8000/Admin');
 }
 
 ?>
