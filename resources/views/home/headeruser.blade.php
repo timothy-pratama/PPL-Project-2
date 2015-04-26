@@ -11,6 +11,23 @@ $client_id_local = 'ulP9hlsW74ahy2ND';
 $redirect_uri_local = 'http://localhost:8000/login_callback';
 $client_secret_local = 'JDPqeCpwEFUY6F4Q';
 $login_local = 'http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=ulP9hlsW74ahy2ND&redirect_uri=http://localhost:8000/login_callback&response_type=code';
+
+//check if user has login or not
+function redirection($url, $permanent = false)
+{
+    header('Location: ' . $url, true, $permanent ? 301 : 302);
+
+    exit();
+}
+
+$json = DB::table('pengguna')->where('id',1)->first();
+$nama = $json->nama;
+if($nama === 'current_username')
+{
+    //redirect
+    redirection('http://localhost:8000');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +58,7 @@ $login_local = 'http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=ulP9
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a href="{{Route('userhome')}}" class="brand">Bandung Berusaha</
+				<a href="{{Route('userhome')}}" class="brand">Bandung Berusaha</a>
 				<div class="nav-collapse">
 					<ul class="nav pull-right">
 						<li class="dropdown">						
@@ -49,8 +66,6 @@ $login_local = 'http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=ulP9
 								<i class="icon-cog"></i>
 								<?php
 
-								$json = DB::table('pengguna')->where('id',1)->first();
-								$nama = $json->nama;
 								echo 'Welcome, '.$nama;
 
 								?>
@@ -58,7 +73,7 @@ $login_local = 'http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=ulP9
 							</a>
 
 							<ul class="dropdown-menu">
-								<li><a href="{{route('login')}}">Logout</a></li>
+								<li><a href="{{route('logout')}}">Logout</a></li>
 							</ul>
 						</li>
 					</ul>

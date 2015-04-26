@@ -38,6 +38,18 @@ class LoginController extends Controller {
 		//
 	}
 
+    public function logout()
+    {
+        DB::table('pengguna')->where('id',1)->update(['nama'=>'current_username']);
+        return view('izin.user.login');
+    }
+
+    public function logout_admin()
+    {
+        DB::table('pengguna')->where('id',1)->update(['nama'=>'current_username']);
+        return view('izin.admin.login');
+    }
+
     public function login()
     {
         return view('izin.user.login');

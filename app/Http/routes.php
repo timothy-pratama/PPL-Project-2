@@ -12,6 +12,8 @@
 */
 Route::get('/', ['uses'=>'LoginController@login','as'=>'login']);
 Route::get('/Admin',['uses'=>'LoginController@login_admin','as'=>'login_admin']);
+Route::get('izin/logout',['uses'=>'LoginController@logout','as'=>'logout']);
+Route::get('izin/logout_admin',['uses'=>'LoginController@logout_admin','as'=>'logout_admin']);
 
 Route::get('home', 'HomeController@index');
 

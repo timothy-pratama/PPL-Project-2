@@ -14,7 +14,7 @@
 			<br>
 			<h4> <p class ="text-center">Anda sebagai Admin dapat melakukan perubahan status dari izin yang telah diajukan</p> </h4>
 			<br><br>
-			<h4> <p class ="text-center"><a href="http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=c4Im8zC52L6PR3gW&redirect_uri=http://localhost:8000/login_callback_admin&response_type=code"><span class="label label-info">Silakan Login</span></a></p> </h4>
+			<h4> <p class ="text-center"><a href="http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=c4Im8zC52L6PR3gW&redirect_uri=http://localhost:8000/login_callback_admin&response_type=code"><span style="padding: 10px" class="label label-info">Silakan Login</span></a></p> </h4>
 		</div>
 	</div>
 @endsection

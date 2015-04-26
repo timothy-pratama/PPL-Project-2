@@ -26,9 +26,9 @@ class IzinSeeder extends Seeder {
         DB::table('izin')->insert($izins);
 
         DB::table('pengguna')->delete();
-        DB::table('pengguna')->insert([
-            'nama'=>'a'
-        ]);
+        DB::table('pengguna')->insert(
+            ['nama'=>'current_username']
+        );
     }
  
 }

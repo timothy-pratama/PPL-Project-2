@@ -1,3 +1,23 @@
+<?php
+//check if user has login or not
+function redirection($url, $permanent = false)
+{
+    header('Location: ' . $url, true, $permanent ? 301 : 302);
+
+    exit();
+}
+
+$json = DB::table('pengguna')->where('id',1)->first();
+$nama = $json->nama;
+
+if($nama === 'current_username')
+{
+    //redirect
+    redirection('http://localhost:8000');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -172,7 +192,7 @@
 		</div>
 		<div class="top-menu">
 			<ul class="nav pull-right top-menu">
-				<li><a class="logout" href="{{route('login_admin')}}">Logout</a></li>
+				<li><a class="logout" href="{{route('logout_admin')}}">Logout</a></li>
 			</ul>
 		</div>
 	</header>
