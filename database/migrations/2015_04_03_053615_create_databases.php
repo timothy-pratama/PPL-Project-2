@@ -166,6 +166,7 @@ class CreateDatabases extends Migration {
 		Schema::drop('IzinUsahaPusatPerbelanjaan');
 		Schema::drop('Izin');
 		Schema::drop('Pengguna');
+        Schema::drop('Admin');
 	}
 
 }

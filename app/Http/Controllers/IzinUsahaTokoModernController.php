@@ -28,6 +28,11 @@ class IzinUsahaTokoModernController extends Controller {
 	
 	public function updateStatus($id,$status){
 		Izin::where('id', $id)->update(['StatusIzin' => $status]);
+        if($status === 'Disetujui')
+        {
+            $time = date('Y-m-d', strtotime('+5 years'));
+            DB::table('izin')->where('id',$id)->update(['BerlakuSampai' => $time]);
+        }
 		return Redirect::to('Admin/izin/IzinUsahaTokoModern')->with('message', 'Status updated.');
 	}
 	/**

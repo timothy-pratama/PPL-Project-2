@@ -11,6 +11,7 @@
 		<td>Berlaku Sampai</td>
 		<td>Status Izin</td>
 		<td>File Pengajuan Izin</td>
+		<td>Aksi</td>
 	</tr>
 	@foreach($izin as $i)
 	<tr>
@@ -25,7 +26,7 @@
 			?>
 		</td>
 		<td>
-			<input type="date" name="BerlakuSampai">		
+		    {{$i->BerlakuSampai}}
 		</td>
 		<td>
 			<div class="btn-group">
@@ -42,6 +43,7 @@
 			</div>
 		</td>
 		<td><a href ="{{url('/Admin/izin/'.$jenis.'/'.$i->id.'/Download') }}">Download </a></td>
+		<td></td>
 	</tr>
 	@endforeach
 	</table>

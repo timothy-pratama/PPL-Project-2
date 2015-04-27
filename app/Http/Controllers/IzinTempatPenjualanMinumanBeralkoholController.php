@@ -4,6 +4,7 @@ use App\Izin;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use DateTime;
 use Illuminate\Http\Request;
 use Redirect;
 use DB;
@@ -28,6 +29,11 @@ class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
 	
 	public function updateStatus($id,$status){
 		Izin::where('id', $id)->update(['StatusIzin' => $status]);
+        if($status === 'Disetujui')
+        {
+            $time = date('Y-m-d', strtotime('+2 years'));
+            DB::table('izin')->where('id',$id)->update(['BerlakuSampai' => $time]);
+        }
 		return Redirect::to('Admin/izin/IzinTempatPenjualanMinumanBeralkohol')->with('message', 'Status updated.');
 	}
 	/**
@@ -67,7 +73,7 @@ class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
 		$id = $id + 1;
 
 		/* Get current timestamp */
-		$date = new \DateTime;
+		$date = new DateTime;
 
         $json = DB::table('pengguna')->where('id',1)->first();
         $nama = $json->nama;

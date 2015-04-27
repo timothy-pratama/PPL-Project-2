@@ -53,10 +53,10 @@ if($nama === 'current_username')
 			<ul class="nav top-menu">
 				<!-- settings start -->
 				<li class="dropdown">
-					<a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-						<i class="fa fa-tasks"></i>
-						<span class="badge bg-theme">4</span>
-					</a>
+					{{--<a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">--}}
+						{{--<i class="fa fa-tasks"></i>--}}
+						{{--<span class="badge bg-theme">4</span>--}}
+					{{--</a>--}}
 					<ul class="dropdown-menu extended tasks-bar">
 						<div class="notify-arrow notify-arrow-green"></div>
 						<li>
@@ -123,10 +123,10 @@ if($nama === 'current_username')
 				
 				<!-- inbox dropdown start-->
 				<li id="header_inbox_bar" class="dropdown">
-					<a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-						<i class="fa fa-envelope-o"></i>
-						<span class="badge bg-theme">5</span>
-					</a>
+					{{--<a data-toggle="dropdown" class="dropdown-toggle" href="as#">--}}
+						{{--<i class="fa fa-envelope-o"></i>--}}
+						{{--<span class="badge bg-theme">5</span>--}}
+					{{--</a>--}}
 					<ul class="dropdown-menu extended inbox">
 						<div class="notify-arrow notify-arrow-green"></div>
 						<li>
