@@ -58,6 +58,7 @@ if($nama === 'current_username')
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
+				<?php echo "<img src=".asset("/img/logo2.png");?> class="img-circle" width="60" style="float: left">
 				<a href="{{Route('userhome')}}" class="brand">Bandung Berusaha</a>
 				<div class="nav-collapse">
 					<ul class="nav pull-right">
