@@ -31,7 +31,7 @@ class IzinUsahaPusatPerbelanjaanController extends Controller {
         if($status === 'Disetujui')
         {
             $time = date('Y-m-d', strtotime('+5 years'));
-            DB::table('izin')->where('id',$id)->update(['BerlakuSampai' => $time]);
+            DB::table('izin')->where('id',$id)->update(['BerlakuSampai' => '0000-00-00']);
         }
 		return Redirect::to('Admin/izin/IzinUsahaPusatPerbelanjaan')->with('message', 'Status updated.');
 	}
