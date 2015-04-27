@@ -61,8 +61,14 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+<<<<<<< HEAD
 /* Buat Surat Tanda Izin PDF */
 Route::get('suratizin', 'SuratIzinController@index');
+=======
+Route::get('buatizin', 'PrintController@index');
+Route::get('sendmail', 'SendMailController@index');
+Route::get('linkizin', 'SendMailController@getLink');
+>>>>>>> origin/master
 
 /* Single Sign On */
 Route::get('/login_callback',['uses'=>'LoginController@call_back','as'=>'login_callback']);

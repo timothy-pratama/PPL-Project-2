@@ -135,8 +135,13 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
+<<<<<<< HEAD
 		'Barryvdh\DomPDF\ServiceProvider',
 
+=======
+		'Elibyy\TCPDF\ServiceProvider',
+		'Barryvdh\DomPDF\ServiceProvider',
+>>>>>>> origin/master
 		/*
 		 * Application Service Providers...
 		 */
@@ -193,7 +198,11 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+<<<<<<< HEAD
 		'PDF'       => 'Barryvdh\DomPDF\Facade',
+=======
+		'PDF'             => 'Barryvdh\DomPDF\Facade',
+>>>>>>> origin/master
 	],
 
 ];
