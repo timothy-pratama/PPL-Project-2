@@ -5,19 +5,29 @@
 </head>
 <body>
 	<div align="center">
-    	<font size="14"><b>PEMERINTAH KOTA BANDUNG</b></font><br>
-    	<font size="16"><b>DINAS KOPERASI UKM DAN PERINDUSTRIAN PERDAGANGAN</b></font><br>
-    	<font size="12">Jl. Kawaluyaan No. 2 Telp./Fax. (022) 7308358, BANDUNG</font><br>
+		<table>
+			<tr>
+				<td>
+					<img src="img/logo.png" style="width:90px">
+				</td>
+				<td align="center" style="PADDING-LEFT: 15px">
+					<font size="14"><b>PEMERINTAH KOTA BANDUNG</b></font><br>
+			    	<font size="14"><b>DINAS KOPERASI UKM DAN PERINDUSTRIAN PERDAGANGAN</b></font><br>
+			    	<font size="12">Jl. Kawaluyaan No. 2 Telp/Fax (022) 7308358, BANDUNG</font><br>
+				</td>
+			</tr>
+		</table>
+    	
     	<hr style="border: 3px outset #595955;">
     	<br><br>
-    	<font size="14"><u><b>SURAT IZIN USAHA PERDAGANGAN (SIUP)</b></u></font><br>
-    	<font size="14"><b>NOMOR: </b></font><br><br><br>    	
+    	<font size="13"><u><b>SURAT IZIN USAHA PERDAGANGAN (SIUP)</b></u></font><br>
+    	<font size="13"><b>NOMOR: </b></font><br><br><br>    	
     </div>
     <div>
-    	<table style="width:100%">
+    	<table>
 		  	<tr>
-			    <td><font size="12">1.</font></td>
-			    <td><font size="12">Nama Perusahaan</font></td>
+			    <td style="width:3px"><font size="12">1.</font></td>
+			    <td style="width:300px"><font size="12">Nama Perusahaan</font></td>
 			    <td>:</td>		
 			    <td></td>
 		  	</tr>
@@ -41,7 +51,7 @@
 		  	</tr>
 		  	<tr>
 			    <td><font size="12">5.</font></td>
-			    <td><font size="12">Alamat Pemilik/Penanggung Jawab/font></td>
+			    <td><font size="12">Alamat Pemilik/Penanggung Jawab</font></td>
 			    <td>:</td>		
 			    <td></td>
 		  	</tr>
@@ -52,10 +62,10 @@
 			    <td></td>
 		  	</tr>
 		  	<tr>
-			    <td><font size="12">7.</font></td>
+			    <td style="vertical-align: top"><font size="12">7.</font></td>
 			    <td><font size="12">Nilai Modal dan Kekayaan Bersih Perusahaan 
 			    	seluruhnya tidak termasuk Tanah dan Bangunan Tempat Berusaha</font></td>
-			    <td>:</td>		
+			    <td style="vertical-align: top">:</td>		
 			    <td></td>
 		  	</tr>
 		  	<tr>
@@ -83,16 +93,30 @@
 			    <td></td>
 		  	</tr>
 		</table>
+		<br>
 		<font size="12"><b>SIUP ini diterbitkan dengan ketentuan :</b></font>
 		<table>
 		  	<tr>
-			    <td>PERTAMA</td>
-			    <td>:</td>		
-			    <td></td>
+			    <td style="vertical-align: top">PERTAMA</td>
+			    <td style="vertical-align: top">:</td>		
+			    <td>
+			    	<table>
+			    		<tr>
+			    			<td style="vertical-align: top">a.</td>
+			    			<td>Surat Izin Usaha Perdagangan (SIUP) ini berlaku untuk melakukan kegiatan usaha 
+			    				perdagangan di seluruh Wilayah Republik Indonesia selama perusahaan masih menjalankan
+			    				kegiatan Usaha Perdagangan</td>
+			    		</tr>
+			    		<tr>
+			    			<td>b.</td>
+			    			<td>Registrasi/Herregistrasi berlaku 3 (tiga) tahun</td>
+			    		</tr>
+			    	</table>
+			    </td>
 		  	</tr>
 		  	<tr>
-			    <td>KEDUA</td>
-			    <td>:</td>		
+			    <td style="vertical-align: top">KEDUA</td>
+			    <td style="vertical-align: top">:</td>		
 			    <td>Pemilik Penanggung Jawab wajib menyampaikan laporan kegiatan 
 			    	usaha perdagangannya satu kali dalam setahun, selambat-lambatnya 
 			    	tanggal 31 Januari tahun berikutnya.</td>
@@ -108,17 +132,28 @@
 			    <td>Tidak untuk melakukan kegiatan usaha selain yang tercantum dalam SIUP ini.</td>
 		  	</tr>
 		</table>
-		<table>
+		<table style="vertical-align: text-bottom">
 		  	<tr>
-			    <td>
-		    		<font size="10">Tembusan disampaikan kepada Yth. :</font><br>
-		    		<font size="10">1. Sekretaris Daerah</font><br>
-		    		<font size="10">   cq. Asisten Ekonomi</font><br>
-		    		<font size="10">   Pembangunan dan Kesra</font><br>
-		    		<font size="10">2. Inspektorat Wilayah Kota</font><br>
-		    		<font size="10">3. Kecamatan ...............</font><br>
-		    	</td>
-			    <td></td>		
+			    <td style="vertical-align: bottom">
+		    		<font size="10pt">Tembusan disampaikan kepada Yth. :</font><br>
+		    		<table>
+		    			<tr>
+		    				<td style="vertical-align: top"><font size="10pt">1.</font></td>
+		    				<td><font size="10pt">Sekretaris Daerah</font><br>
+		    					<font size="10pt">cq. Asisten Ekonomi</font><br>
+		    					<font size="10pt">Pembangunan dan Kesra</font>
+		    				</td>
+		    			</tr>
+		    			<tr>
+		    				<td><font size="10pt">2.</font></td>
+		    				<td><font size="10pt">Inspektorat Wilayah Kota</font></td>
+		    			</tr>
+		    			<tr>
+		    				<td><font size="10pt">3.</font></td>
+		    				<td><font size="10pt">Kecamatan ..................</font></td>
+		    			</tr>
+		    		</table>
+		    	</td>	
 			    <td>
 			    	<table>
 			    		<tr>
@@ -133,7 +168,7 @@
 			    		</tr>
 			    	<table>
 		    		<div align="center">
-		    			<font size="12">DINAS KOPERASI UKM DAN PERINDUSTRIAN PERDAGANGAN</font><br>
+		    			<font size="12">DINAS KOPERASI UKM DAN <br>PERINDUSTRIAN PERDAGANGAN</font><br>
 		    			<font size="12">KOTA BANDUNG</font><br><br>	    			
 		    			<font size="12">Kepala,</font><br><br><br>	    			
 		    			<font size="12"><u></u></font><br>
