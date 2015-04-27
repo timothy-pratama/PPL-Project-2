@@ -33,7 +33,7 @@ class IzinUsahaTokoModernController extends Controller {
         if($status === 'Disetujui')
         {
             $time = date('Y-m-d', strtotime('+5 years'));
-            DB::table('izin')->where('id',$id)->update(['BerlakuSampai' => '0000-00-00']);
+            DB::table('izin')->where('id',$id)->update(['BerlakuSampai' => $time]);
         }
 		return Redirect::to('Admin/izin/IzinUsahaTokoModern')->with('message', 'Status updated.');
 	}
@@ -43,17 +43,17 @@ class IzinUsahaTokoModernController extends Controller {
 		$izin = IzinUsahaTokoModern::where('idIzin','=',$id)->first();
 		
 		if ($izin != null) {
-			$downloadLink['PengesahanKehakiman'] = $izin->PengesahanKehakiman;
-			$downloadLink['SuratKepemilikanTempat'] = $izin->SuratKepemilikanTempat;
-			$downloadLink['PasFoto'] = $izin->PasFoto;
-			$downloadLink['SuratPernyataanKebenaran'] = $izin->SuratPernyataanKebenaran;
-			$downloadLink['KemitraanUMKM'] = $izin->KemitraanUMKM;
-			$downloadLink['AnalisaDampakLingkungan'] = $izin->AnalisaDampakLingkungan;
-			$downloadLink['SuratKeteranganLokasi'] = $izin->SuratKeteranganLokasi;
-			$downloadLink['KTPPimpinan'] = $izin->KTPPimpinan;
-			$downloadLink['SuratIzinBKPM'] = $izin->SuratIzinBKPM;
-			$downloadLink['NeracaModalPerusahaan'] = $izin->NeracaModalPerusahaan;
-			$downloadLink['DomisiliPerusahaan'] = $izin->DomisiliPerusahaan;
+            $downloadLink['Pengesahan Kehakiman'] = $izin->PengesahanKehakiman;
+            $downloadLink['Surat Kepemilikan Tempat'] = $izin->SuratKepemilikanTempat;
+            $downloadLink['Pas Foto'] = $izin->PasFoto;
+            $downloadLink['Surat Pernyataan Kebenaran'] = $izin->SuratPernyataanKebenaran;
+            $downloadLink['Kemitraan UMKM'] = $izin->KemitraanUMKM;
+            $downloadLink['Analisa Dampak Lingkungan'] = $izin->AnalisaDampakLingkungan;
+            $downloadLink['Surat Keterangan Lokasi'] = $izin->SuratKeteranganLokasi;
+            $downloadLink['KTP Pimpinan'] = $izin->KTPPimpinan;
+            $downloadLink['Surat Izin BKPM'] = $izin->SuratIzinBKPM;
+            $downloadLink['Neraca Modal Perusahaan'] = $izin->NeracaModalPerusahaan;
+            $downloadLink['Domisili Perusahaan'] = $izin->DomisiliPerusahaan;
 			return view('izin.admin.tokomodern',compact('downloadLink'));
 		}
 		else {

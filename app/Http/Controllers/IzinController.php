@@ -1,9 +1,8 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Response;
 
-use Illuminate\Http\Request;
 
 class IzinController extends Controller {
 
@@ -44,6 +43,22 @@ class IzinController extends Controller {
 	{
 		//
 	}
+
+    public function download($filename)
+    {
+        if (file_exists($filename))
+        {
+            // Send Download
+            return Response::download($filename, basename($filename), [
+                'Content-Length: '. filesize($filename)
+            ]);
+        }
+        else
+        {
+            // Error
+            exit('Requested file does not exist on our server!');
+        }
+    }
 
 	/**
 	 * Store a newly created resource in storage.

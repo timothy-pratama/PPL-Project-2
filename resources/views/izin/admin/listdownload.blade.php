@@ -5,7 +5,7 @@
 	</tr>
 	@foreach($downloadLink as $jns => $link)
 	<tr>
-		<td><a href = "{{ url($link) }}"> {{ $jns }} </a></td>
+		<td><a href = "{{route('downloadfile',array('filename'=>$link))}}"> {{ $jns }} </a></td>
 	</tr>
 	@endforeach
 </table>	

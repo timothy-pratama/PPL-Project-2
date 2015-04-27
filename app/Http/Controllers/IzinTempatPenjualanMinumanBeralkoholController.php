@@ -4,6 +4,7 @@ use App\Izin;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\IzinTempatPenjualanMinumanBeralkohol;
 use DateTime;
 use Illuminate\Http\Request;
 use Redirect;
@@ -32,7 +33,7 @@ class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
         if($status === 'Disetujui')
         {
             $time = date('Y-m-d', strtotime('+2 years'));
-            DB::table('izin')->where('id',$id)->update(['BerlakuSampai' => '0000-00-00']);
+            DB::table('izin')->where('id',$id)->update(['BerlakuSampai' => $time]);
         }
 		return Redirect::to('Admin/izin/IzinTempatPenjualanMinumanBeralkohol')->with('message', 'Status updated.');
 	}
@@ -85,7 +86,7 @@ class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
 			'NamaPemohon' => $nama,
             'AlamatPerusahaan' => $alamatPerusahaan,
             'NamaPerusahaan'  => $namaPerusahaan,
-			'JenisIzin' => 'STPMB', 
+			'JenisIzin' => 'ITPMB',
 			'TanggalMasuk' => $date, 
 			'BerlakuSampai' => $date, 
 			'StatusIzin' => 'Sudah Diterima', 
@@ -175,4 +176,21 @@ class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
 		//
 	}
 
+    public function downloadFile($id) {
+        $downloadLink = array();
+        $izin = IzinTempatPenjualanMinumanBeralkohol::where('idIzin','=',$id)->first();
+
+        if ($izin != null) {
+            $downloadLink['Izin Usaha Kepariwisataan'] = $izin->IzinUsahaKepariwisataan;
+            $downloadLink['KTP Pimpinan'] = $izin->KTPPimpinan;
+            $downloadLink['Izin Usaha Perdagangan'] = $izin->IzinUsahaPerdagangan;
+            $downloadLink['Tanda Daftar Perusahaan'] = $izin->TandaDaftarPerusahaan;
+            $downloadLink['Kepemilikan Tempat'] = $izin->KepemilikanTempat;
+            return view('izin.admin.tokomodern',compact('downloadLink'));
+        }
+        else {
+            $izin = Izin::where('JenisIzin','=','ITPMB')->get();
+            return view('izin.admin.tokomodern', compact('izin'));
+        }
+    }
 }

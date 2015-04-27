@@ -4,6 +4,7 @@ use App\Izin;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\TandaPendaftaranWaralaba;
 use Illuminate\Http\Request;
 use Redirect;
 use DB;
@@ -31,36 +32,30 @@ class TandaPendaftaranWaralabaController extends Controller {
         if($status === 'Disetujui')
         {
             $time = date('Y-m-d', strtotime('+5 years'));
-            DB::table('izin')->where('id',$id)->update(['0000-00-00' => $time]);
+            DB::table('izin')->where('id',$id)->update(['BerlakuSampai' => $time]);
         }
 		return Redirect::to('Admin/izin/TandaPendaftaranWaralaba')->with('message', 'Status updated.');
 	}
-	
-	public function downloadFile($id) {
-	/*
-		$zip = new ZipArchive();
-		$folder = storage_path().'/Izin/STPW/'.$id.'/';
-		$zipFile = "file.zip";
-		$handle = opendir($folder); 
-		while (false !== $f = readdir($handle)) { 
-			if ($f != '.' && $f != '..') { 
-				$filePath = "$folder/$f"; 
-				if (is_file($filePath)) { 
-				  $zipFile->addFile($filePath, $localPath); 
-				} elseif (is_dir($filePath)) { 
-				  // Add sub-directory. 
-				  $zipFile->addEmptyDir($localPath); 
-				  self::folderToZip($filePath, $zipFile, 0); 
-				} 
-			}
-		}
-		
-		closedir($handle); */
 
-		$zip = new ZipArchive();
+    public function downloadFile($id) {
+        $downloadLink = array();
+        $izin = TandaPendaftaranWaralaba::where('idIzin','=',$id)->first();
 
-		//return Redirect::to('Admin/izin/TandaPendaftaranWaralaba')->with('message', 'Download done.');
-	}
+        if ($izin != null) {
+            $downloadLink['STPW Pemberi Waralaba'] = $izin->STPWPemberiWaralaba;
+            $downloadLink['HAKI'] = $izin->HAKI;
+            $downloadLink['Perjanjian Waralaba'] = $izin->PerjanjianWaralaba;
+            $downloadLink['Izin Teknis'] = $izin->IzinTeknis;
+            $downloadLink['Prospektus Penawaran Waralaba'] = $izin->ProspektusPenawaranWaralaba;
+            $downloadLink['KTP Pimpinan'] = $izin->KTPPimpinan;
+            $downloadLink['Tanda Daftar Perusahaan'] = $izin->TandaDaftarPerusahaan;
+            return view('izin.admin.tokomodern',compact('downloadLink'));
+        }
+        else {
+            $izin = Izin::where('JenisIzin','=','STPW')->get();
+            return view('izin.admin.tokomodern', compact('izin'));
+        }
+    }
 	
 	/**
 	 * Show the form for creating a new resource.

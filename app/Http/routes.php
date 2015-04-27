@@ -55,6 +55,7 @@ Route::get('Admin/izin/IzinTempatPenjualanMinumanBeralkohol/{id}/Download', 'Izi
 Route::get('Admin/izin/IzinUsahaTokoModern/{id}/Download', 'IzinUsahaTokoModernController@downloadFile');
 Route::get('Admin/izin/IzinUsahaPasarTradisional/{id}/Download', 'IzinUsahaPasarTradisionalController@downloadFile');
 Route::get('Admin/izin/TandaPendaftaranWaralaba/{id}/Download', 'TandaPendaftaranWaralabaController@downloadFile');
+Route::get('Download/{filename}',['uses'=>'IzinController@download','as'=>'downloadfile']);
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
