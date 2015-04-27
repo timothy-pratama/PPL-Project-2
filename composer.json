@@ -8,7 +8,8 @@
 		"laravel/framework": "5.0.*",
 		"guzzlehttp/guzzle": "~5.2",
 		"elibyy/laravel-tcpdf": "0.*",
-		"barryvdh/laravel-dompdf": "*"
+		"barryvdh/laravel-dompdf": "*",
+		"guzzlehttp/guzzle": "~4.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

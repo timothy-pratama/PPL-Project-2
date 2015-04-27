@@ -62,6 +62,8 @@ Route::controllers([
 ]);
 
 Route::get('buatizin', 'PrintController@index');
+Route::get('sendmail', 'SendMailController@index');
+Route::get('linkizin', 'SendMailController@getLink');
 
 /* Single Sign On */
 Route::get('/login_callback',['uses'=>'LoginController@call_back','as'=>'login_callback']);
