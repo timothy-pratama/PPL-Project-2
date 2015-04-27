@@ -20,10 +20,11 @@
     	
     	<hr style="border: 3px outset #595955;">
     	<br>
-    	<font size="13"><u><b>SURAT IZIN USAHA PERDAGANGAN (SIUP)</b></u></font><br>
+    	<font size="13"><u><b><?php echo $namasurat; ?></b></u></font><br>
     	<font size="12"><b>NOMOR: <?php echo $nomorsurat; ?></b></font><br><br><br>    	
     </div>
     <div>
+    	<font size="12">Surat izin ini diberikan kepada:</font>
     	<table>
 		  	<tr>
 			    <td style="width:3px"  style="vertical-align: top"><font size="12">1.</font></td>
@@ -166,6 +167,11 @@
 			    			<td><font size="12">Pada tanggal</font></td>
 			    			<td><font size="12">:</font></td>
 			    			<td><font size="12"><?php echo $tanggal; ?></font></td>
+			    		</tr>
+			    		<tr>
+			    			<td><font size="12">Berlaku s/d</font></td>
+			    			<td><font size="12">:</font></td>
+			    			<td><font size="12"><?php echo $berlakusampai; ?></font></td>
 			    		</tr>
 			    	<table>
 		    		<div align="center">

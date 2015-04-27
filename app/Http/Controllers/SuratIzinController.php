@@ -15,6 +15,7 @@ class SuratIzinController extends Controller
     {
     	$pdf = App::make('dompdf');
     	$parameter = array();
+        $parameter['namasurat'] = "SURAT IZIN USAHA PERDAGANGAN (SIUP)";
     	$parameter['nomorsurat'] = "510/2 - 0077 -DISKUKM & PERINDAG/2008";
     	$parameter['namaperusahaan'] = "PT. DUTA FUTURE INTERNATIONAL";
     	$parameter['merek'] = "-";
@@ -28,6 +29,7 @@ class SuratIzinController extends Controller
     	$parameter['bidangusaha'] = "-";
     	$parameter['jenisbarang'] = "Alat, suku cadang, alat tulis, katering, komputer";
     	$parameter['tanggal'] = "17 Maret 2008";
+        $parameter['berlakusampai'] = "17 Maret 2013";
     	$parameter['kecamatan'] = "Antapani";
     	$parameter['namakepala'] = "Drs. H. Ernawan Natasaputra";
     	$parameter['jabatankepala'] = "Pembina Utama Muda";
