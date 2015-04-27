@@ -1,12 +1,14 @@
 <?php namespace App\Http\Controllers;
 
 use App\Izin;
+use App\IzinUsahaTokoModern;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Redirect;
 use DB;
+use Session;
 
 class IzinUsahaTokoModernController extends Controller {
 
@@ -35,6 +37,32 @@ class IzinUsahaTokoModernController extends Controller {
         }
 		return Redirect::to('Admin/izin/IzinUsahaTokoModern')->with('message', 'Status updated.');
 	}
+	
+	public function downloadFile($id) {
+		$downloadLink = array();
+		$izin = IzinUsahaTokoModern::where('idIzin','=',$id)->first();
+		
+		if ($izin != null) {
+			$downloadLink['PengesahanKehakiman'] = $izin->PengesahanKehakiman;
+			$downloadLink['SuratKepemilikanTempat'] = $izin->SuratKepemilikanTempat;
+			$downloadLink['PasFoto'] = $izin->PasFoto;
+			$downloadLink['SuratPernyataanKebenaran'] = $izin->SuratPernyataanKebenaran;
+			$downloadLink['KemitraanUMKM'] = $izin->KemitraanUMKM;
+			$downloadLink['AnalisaDampakLingkungan'] = $izin->AnalisaDampakLingkungan;
+			$downloadLink['SuratKeteranganLokasi'] = $izin->SuratKeteranganLokasi;
+			$downloadLink['KTPPimpinan'] = $izin->KTPPimpinan;
+			$downloadLink['SuratIzinBKPM'] = $izin->SuratIzinBKPM;
+			$downloadLink['NeracaModalPerusahaan'] = $izin->NeracaModalPerusahaan;
+			$downloadLink['DomisiliPerusahaan'] = $izin->DomisiliPerusahaan;
+			return view('izin.admin.tokomodern',compact('downloadLink'));
+		}
+		else {
+			$izin = Izin::where('JenisIzin','=','IUTM')->get();
+			return view('izin.admin.tokomodern', compact('izin'));
+		}
+	}
+	
+	
 	/**
 	 * Show the form for creating a new resource.
 	 *

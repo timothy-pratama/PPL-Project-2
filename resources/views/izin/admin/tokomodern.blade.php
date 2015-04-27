@@ -11,7 +11,11 @@
 		<div class="col-xs-9 col-offset-xs-1">
 			<br><br><br><br><br><br>
 			<h1> Izin Usaha Toko Modern </h1>
-			@include ('izin.admin.listizin')
+			@if (!isset($downloadLink))
+				@include ('izin.admin.listizin')
+			@else
+				@include('izin.admin.listdownload')
+			@endif
 		</div>
 	</div>
 @endsection

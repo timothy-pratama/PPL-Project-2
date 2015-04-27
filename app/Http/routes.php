@@ -50,10 +50,10 @@ Route::post('izin/IzinUsahaPasarTradisional/store','IzinUsahaPasarTradisionalCon
 Route::post('izin/IzinTandaPendaftaranWaralaba/store','TandaPendaftaranWaralabaController@store');
 
 /* Admin: Download File */
-Route::get('Admin/izin/IzinUsahaPusatPerbelanjaan/{id}/Download', 'IzinTempatPenjualanMinumanBeralkoholController@downloadFile');
-Route::get('Admin/izin/IzinTempatPenjualanMinumanBeralkohol/{id}/Download', 'IzinUsahaPasarTradisionalController@downloadFile');
-Route::get('Admin/izin/IzinUsahaTokoModern/{id}/Download', 'IzinUsahaPusatPerbelanjaanController@downloadFile');
-Route::get('Admin/izin/IzinUsahaPasarTradisional/{id}/Download', 'IzinUsahaTokoModernController@downloadFile');
+Route::get('Admin/izin/IzinUsahaPusatPerbelanjaan/{id}/Download', 'IzinUsahaPusatPerbelanjaanController@downloadFile');
+Route::get('Admin/izin/IzinTempatPenjualanMinumanBeralkohol/{id}/Download', 'IzinTempatPenjualanMinumanBeralkoholController@downloadFile');
+Route::get('Admin/izin/IzinUsahaTokoModern/{id}/Download', 'IzinUsahaTokoModernController@downloadFile');
+Route::get('Admin/izin/IzinUsahaPasarTradisional/{id}/Download', 'IzinUsahaPasarTradisionalController@downloadFile');
 Route::get('Admin/izin/TandaPendaftaranWaralaba/{id}/Download', 'TandaPendaftaranWaralabaController@downloadFile');
 
 Route::controllers([
