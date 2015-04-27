@@ -43,9 +43,6 @@
 							</ul>
 						</li>
 					</ul>
-					<form class="navbar-search pull-right">
-						<input class="search-query" placeholder="Search" type="text">
-					</form>
 				</div><!--/.nav-collapse -->
 			</div>
 		</div> <!-- /navbar-inner -->
