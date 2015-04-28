@@ -29,11 +29,11 @@ Route::get('izin/TandaPendaftaranWaralaba', 'TandaPendaftaranWaralabaController@
 
 /* Admin Routing */
 Route::get('Admin/izin', ['uses'=>'IzinController@admin', 'as'=>'adminhome']);
-Route::get('Admin/izin/IzinTempatPenjualanMinumanBeralkohol', 'IzinTempatPenjualanMinumanBeralkoholController@admin');
-Route::get('Admin/izin/IzinUsahaPasarTradisional', 'IzinUsahaPasarTradisionalController@admin');
-Route::get('Admin/izin/IzinUsahaPusatPerbelanjaan', 'IzinUsahaPusatPerbelanjaanController@admin');
-Route::get('Admin/izin/IzinUsahaTokoModern', 'IzinUsahaTokoModernController@admin');
-Route::get('Admin/izin/TandaPendaftaranWaralaba', 'TandaPendaftaranWaralabaController@admin');
+Route::get('Admin/izin/IzinTempatPenjualanMinumanBeralkohol', ['uses'=>'IzinTempatPenjualanMinumanBeralkoholController@admin','as'=>'ITPMB']);
+Route::get('Admin/izin/IzinUsahaPasarTradisional', ['uses'=>'IzinUsahaPasarTradisionalController@admin','as'=>'IUPT']);
+Route::get('Admin/izin/IzinUsahaPusatPerbelanjaan', ['uses'=>'IzinUsahaPusatPerbelanjaanController@admin','as'=>'IUPP']);
+Route::get('Admin/izin/IzinUsahaTokoModern', ['uses'=>'IzinUsahaTokoModernController@admin','as'=>'IUTM']);
+Route::get('Admin/izin/TandaPendaftaranWaralaba', ['uses'=>'TandaPendaftaranWaralabaController@admin','as'=>'STPW']);
 
 /* Admin: Update Status */
 Route::get('Admin/izin/IzinTempatPenjualanMinumanBeralkohol/{id}/status/{status}', 'IzinTempatPenjualanMinumanBeralkoholController@updateStatus');
@@ -56,6 +56,9 @@ Route::get('Admin/izin/IzinUsahaTokoModern/{id}/Download', 'IzinUsahaTokoModernC
 Route::get('Admin/izin/IzinUsahaPasarTradisional/{id}/Download', 'IzinUsahaPasarTradisionalController@downloadFile');
 Route::get('Admin/izin/TandaPendaftaranWaralaba/{id}/Download', 'TandaPendaftaranWaralabaController@downloadFile');
 Route::get('Download/{filename}',['uses'=>'IzinController@download','as'=>'downloadfile']);
+
+/* Admin: Delete Izin */
+Route::get('Admin/izin/delete/{id}/{jenisizin}',['uses'=>'IzinController@deleteIzin', 'as'=>'deleteIzin']);
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

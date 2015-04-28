@@ -1,4 +1,3 @@
-<br>
 @if ( !$izin->count() )
 	Tidak ada izin yang masuk
 @else
@@ -11,20 +10,21 @@
 		<td>Berlaku Sampai</td>
 		<td>Status Izin</td>
 		<td>File Pengajuan Izin</td>
+		<td>Hapus</td>
 	</tr>
 	@foreach($izin as $i)
 	<tr>
-		<td>{{ $i->id }}</td>
-		<td>{{ $i->NamaPemohon }}</td>
-		<td>{{$i->NamaPerusahaan}}</td>
-		<td>
+		<td style="vertical-align: middle">{{ $i->id }}</td>
+		<td style="vertical-align: middle">{{ $i->NamaPemohon }}</td>
+		<td style="vertical-align: middle">{{$i->NamaPerusahaan}}</td>
+		<td style="vertical-align: middle">
 			<?php
 				$source = $i->TanggalMasuk;
 				$date = new DateTime($source);
 				echo $date->format('d-m-Y');
 			?>
 		</td>
-		<td>
+		<td style="vertical-align: middle">
 		    {{$i->BerlakuSampai}}
 		</td>
 		<td>
@@ -41,8 +41,25 @@
 				</ul>
 			</div>
 		</td>
-		<td><a href ="{{url('/Admin/izin/'.$jenis.'/'.$i->id.'/Download') }}">Download </a></td>
+		<td style="vertical-align: middle"><a href ="{{url('/Admin/izin/'.$jenis.'/'.$i->id.'/Download') }}">Download </a></td>
+		<td>
+            <form method="get" onclick="return validate({{$i->id}});" action="#">
+                <button type="submit" class="btn btn-danger">Hapus</button>
+            </form>
+		</td>
 	</tr>
 	@endforeach
 	</table>
+
+	<script>
+	    function validate(id)
+	    {
+	        if (confirm('Apakah anda yakin ingin menghapus izin dengan ID= '+id+'?'))
+	        {
+                window.location.href = "{{route('deleteIzin',['id'=>$i->id,'jenisizin'=>$i->JenisIzin])}}";
+	        }
+	        return false;
+	    }
+	</script>
+
 @endif

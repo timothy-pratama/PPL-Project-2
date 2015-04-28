@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Response;
 
 
@@ -41,7 +42,7 @@ class IzinController extends Controller {
 	 */
 	public function create()
 	{
-		//
+
 	}
 
     public function download($filename)
@@ -57,6 +58,39 @@ class IzinController extends Controller {
         {
             // Error
             exit('Requested file does not exist on our server!');
+        }
+    }
+
+    public function deleteIzin($id, $jenisizin)
+    {
+        DB::table('izin')->where('id',$id)->delete();
+        switch($jenisizin)
+        {
+            case 'IUTM':
+            {
+                return redirect()->route('IUTM');
+                break;
+            }
+            case 'IUPP':
+            {
+                return redirect()->route('IUPP');
+                break;
+            }
+            case 'IUPT':
+            {
+                return redirect()->route('IUPT');
+                break;
+            }
+            case 'ITPMB':
+            {
+                return redirect()->route('ITPMB');
+                break;
+            }
+            case 'STPW':
+            {
+                return redirect()->route('STPW');
+                break;
+            }
         }
     }
 
