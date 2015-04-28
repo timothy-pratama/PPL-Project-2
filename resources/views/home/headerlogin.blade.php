@@ -35,7 +35,7 @@
 							</a>
 
 							<ul class="dropdown-menu">
-								<li><a href="{{$login_local}}">Login</a></li>
+								<li><a href="{{$login}}">Login</a></li>
 							</ul>
 						</li>
 					</ul>
