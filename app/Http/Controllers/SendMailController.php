@@ -5,13 +5,18 @@ class SendMailController extends Controller
 {
     public function index()
     {
-       Mail::send('linkizin', [], function($message)
-		{
-			$message->to('riadysastrak@gmail.com', 'lalala')->subject( "Nyobain" );
-		});
+		return view("sendmail");
+       
     }
 	
 	public function getLink(){
 		return view("linkizin");
+	}
+	
+	public function sendMail(){
+		Mail::send('linkizin', [], function($message)
+		{
+			$message->to('riadysastrak@gmail.com', 'lalala')->subject( "Nyobain" );
+		});
 	}
 }
