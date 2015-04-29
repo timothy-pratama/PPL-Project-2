@@ -93,10 +93,10 @@ class LoginController extends Controller {
         //test ke localhost
         //user
         $name_local = 'saranaperdaganganlocalhost';
-        $client_id_local = 'ulP9hlsW74ahy2ND';
+        $client_id_local = 'RyOy8zT3318xoxXp';
         $redirect_uri_local = 'http://localhost:8000/login_callback';
-        $client_secret_local = 'JDPqeCpwEFUY6F4Q';
-        $login_local = 'http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=ulP9hlsW74ahy2ND&redirect_uri=http://localhost:8000/login_callback&response_type=code';
+        $client_secret_local = 'NLwOIik9IeBjpFip';
+        $login_local = 'http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=RyOy8zT3318xoxXp&redirect_uri=http://localhost:8000/login_callback&response_type=code';
 
         $code = $request->get('code',null);
 
@@ -116,11 +116,11 @@ class LoginController extends Controller {
         $access_token = $body_json->access_token;
 
         $client = new Client();
-        $response = $client->get('http://dukcapil.pplbandung.biz.tm/api/penduduk/'.$access_token);
+        $response = $client->get('http://dukcapil.pplbandung.biz.tm/api/penduduk/',['headers'=>['Authorization'=>'Bearer '.$access_token]]);
         $data = $response->getBody();
 
         $json = json_decode($data);
-        $nama = $json->nama;
+        $nama = $json->nama_penduduk;
 
         DB::table('pengguna')->where('id',1)->update(['nama'=>$nama]);
 

@@ -2,7 +2,7 @@
     use Illuminate\Support\Facades\Session;
     $jenis = 'all';
     $stats = 'user';
-    $login_local = 'http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=ulP9hlsW74ahy2ND&redirect_uri=http://localhost:8000/login_callback&response_type=code';
+    $login_local = 'http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=RyOy8zT3318xoxXp&redirect_uri=http://localhost:8000/login_callback&response_type=code';
 ?>
 
 @extends ('home.headerlogin')
