@@ -105,7 +105,7 @@ class IzinUsahaPusatPerbelanjaanController extends Controller {
 		);
 
 		/* Destination Path */
-		$DestinationPath = storage_path().'\\Izin\\IUPP\\'.$id.'\\';
+		$DestinationPath = public_path().'/File/Izin/IUPP/'.$id.'/';
 
 		/* Get each document file name */
 		$KTPPimpinanFileName = $KTPPimpinan->getClientOriginalName();
