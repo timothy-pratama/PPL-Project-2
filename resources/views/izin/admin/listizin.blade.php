@@ -11,6 +11,7 @@
 		<td>Berlaku Sampai</td>
 		<td>Status Izin</td>
 		<td>File Pengajuan Izin</td>
+		<td>Dokumen Persetujuan</td>
 		<td>Hapus</td>
 	</tr>
 	@foreach($izin as $i)
@@ -44,6 +45,20 @@
 			</div>
 		</td>
 		<td style="vertical-align: middle"><a href ="{{url('/Admin/izin/'.$jenis.'/'.$i->id.'/Download') }}">Lihat</a></td>
+		<?php 
+			if ($i->StatusIzin == 'Disetujui'){
+				if ($i->DokumenPersetujuan == '-'){?>
+					<td style="vertical-align: middle"><a href ="{{url('/suratizin/'.$i->id) }}">Unduh</a></td>
+			<?php 
+				} else if ($i->DokumenPersetujuan == '/suratizin/'.$i->id) {?>
+					<td style="vertical-align: middle"><a href ="{{url('/suratizin/'.$i->id) }}">Unggah</a></td>
+			<?php} else {?>
+					<td style="vertical-align: middle"><a href ="/Download?path={{$i->DokumenPersetujuan}}">Lihat</a></td>
+			<?php	}
+			} else {
+				echo '<td style="vertical-align: middle">-</td>';
+			}
+		?>		
 		<td>
             <form method="get" onclick="return validate({{$i->id}},'{{$i->JenisIzin}}');" action="#">
                 <button type="submit" class="btn btn-danger">Hapus</button>

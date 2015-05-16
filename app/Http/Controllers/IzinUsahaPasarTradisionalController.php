@@ -131,7 +131,7 @@ class IzinUsahaPasarTradisionalController extends Controller {
 			'TanggalMasuk' => $date, 
 			'BerlakuSampai' => $date, 
 			'StatusIzin' => 'Diterima', 
-			'DokumenPersetujuan' => 'localhost:8000', 
+			'DokumenPersetujuan' => '-', 
 			'created_at' => $date, 
 			'updated_at' => $date
 			]
