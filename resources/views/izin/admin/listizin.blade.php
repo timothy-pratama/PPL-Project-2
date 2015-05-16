@@ -48,11 +48,11 @@
 		<?php 
 			if ($i->StatusIzin == 'Disetujui'){
 				if ($i->DokumenPersetujuan == '-'){?>
-					<td style="vertical-align: middle"><a href ="{{url('Admin/suratizin/'.$i->id) }}">Unduh</a></td>
+					<td style="vertical-align: middle"><a href ="{{url('/suratizin/'.$i->id) }}">Unduh</a></td>
 			<?php 
 				} else if ($i->DokumenPersetujuan == '/suratizin/'.$i->id) {?>					
 					<td style="vertical-align: middle">
-						<form role ="form" method ="post" enctype="multipart/form-data" action="{{ url('Admin/suratizin/store') }}">
+						<form role ="form" method ="post" enctype="multipart/form-data" action="{{ url('/suratizin/store') }}">
 							<input type="hidden" name="_token" value="{{csrf_token()}}">
 							<input type="hidden" name="id" value="<?php echo $i->id;?>">
 							<input type="file" id="SuratIzinFile" name="SuratIzinFile" class="hidden" onchange="javascript:this.form.submit();">
