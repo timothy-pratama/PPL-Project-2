@@ -67,6 +67,8 @@ Route::controllers([
 
 /* Buat Surat Tanda Izin PDF */
 Route::get('suratizin/{id}', 'SuratIzinController@getSuratIzin');
+Route::post('suratizin/store', 'SuratIzinController@store');
+Route::get('suratizin/view/{id}', 'SuratIzinController@viewSuratIzin');
 Route::get('sendmail', 'SendMailController@sendMail');
 Route::get('linkizin', 'SendMailController@getLink');
 

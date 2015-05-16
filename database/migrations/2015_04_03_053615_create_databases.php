@@ -17,11 +17,15 @@ class CreateDatabases extends Migration {
 			$table->string('NamaPemohon')->default('');
             $table->string('NamaPerusahaan')->default('');
             $table->string('AlamatPerusahaan')->default('');
+            $table->string('NamaUsaha')->default('');
+            $table->string('LokasiUsaha')->default('');
+			$table->string('KegiatanUsaha')->default('');
 			$table->string('JenisIzin',10)->default('');
 			$table->date('TanggalMasuk');
 			$table->date('BerlakuSampai');				
 			$table->string('StatusIzin',20)->default(false);
 			$table->string('DokumenPersetujuan')->default('');
+			$table->date('TanggalDisetujui');
 			$table->timestamps();
 		});
 		

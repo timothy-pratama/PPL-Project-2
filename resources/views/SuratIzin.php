@@ -25,6 +25,7 @@
     </div>
     <div><?php $no = 1;?>
     	<font size="12">Memperhatikan <?php echo $peraturan;?>, maka <?php echo $namasurat;?> ini diberikan kepada:</font>
+    	<br>
     	<table>
 		  	<tr>
 			    <td style="width:3px"  style="vertical-align: top"><font size="12"><?php echo $no; $no++;?>.</font></td>
@@ -36,13 +37,25 @@
 			    <td style="vertical-align: top"><font size="12"><?php echo $no; $no++;?>.</font></td>
 			    <td style="vertical-align: top"><font size="12">Alamat Kantor Perusahaan</font></td>
 			    <td style="vertical-align: top">:</td>		
-			    <td><?php echo $alamatperusahaan?></td>
+			    <td><?php echo $alamatperusahaan; ?></td>
 		  	</tr>
 		  	<tr>
 			    <td style="vertical-align: top"><font size="12"><?php echo $no; $no++;?>.</font></td>
 			    <td style="vertical-align: top"><font size="12">Nama Pemilik/Penanggung Jawab</font></td>
 			    <td style="vertical-align: top">:</td>		
 			    <td><?php echo $namapemilik; ?></td>
+		  	</tr>
+		  	<tr>
+			    <td style="width:3px"  style="vertical-align: top"><font size="12"><?php echo $no; $no++;?>.</font></td>
+			    <td style="width:220px" style="vertical-align: top"><font size="12">Nama Usaha</font></td>
+			    <td style="width:3px" style="vertical-align: top">:</td>		
+			    <td><?php echo $namausaha; ?></td>
+		  	</tr>
+		  	<tr>
+			    <td style="vertical-align: top"><font size="12"><?php echo $no; $no++;?>.</font></td>
+			    <td style="vertical-align: top"><font size="12">Lokasi Usaha</font></td>
+			    <td style="vertical-align: top">:</td>		
+			    <td><?php echo $lokasiusaha; ?></td>
 		  	</tr>
 		  	<tr>
 			    <td style="vertical-align: top"><font size="12"><?php echo $no; $no++;?>.</font></td>
@@ -86,7 +99,7 @@
 		  	<tr>
 			    <td>KETIGA</td>
 			    <td>:</td>		
-			    <td>Tidak untuk mmelakukan kegiatan usaha selain yang tercantum dalam izin ini.</td>
+			    <td>Tidak untuk melakukan kegiatan usaha selain yang tercantum dalam izin ini.</td>
 		  	</tr>
 		</table>
 		<br><br>
