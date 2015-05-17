@@ -7,7 +7,9 @@ use App\Library\SendMail;
 
 use App\IzinTempatPenjualanMinumanBeralkohol;
 use DateTime;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Redirect;
 use DB;
 
@@ -120,8 +122,23 @@ class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
 		$SuratKepemilikanTempatFile->move($DestinationPath, $SuratKepemilikanTempatFileName);
 		$TandaDaftarPerusahaanFile->move($DestinationPath, $TandaDaftarPerusahaanFileName);
 
+        /* Ambil status izin HO */
+        $client = new Client();
+        $request = $client->createRequest('GET','http://usahaterpadu.pplbandung.biz.tm/statusizin/ho/'.$IzinGangguan);
+        $response = $client->send($request);
+        $body = $response->getBody();
+        $statusHO = 0;
+        if(strlen($body) <= 2)
+        {
+            $statusHO = 0;
+        }
+        else
+        {
+            $statusHO = 1;
+        }
+
 		/* Insert izin to table IzinUsahaPusatPerbelanjaan */
-		DB::table('IzinTempatPenjualanMinumanBeralkohol')->insert(
+		DB::table('izintempatpenjualanminumanberalkohol')->insert(
 			[
 			'idIzin' => $id,
 			'IzinusahaKepariwisataan' => $DestinationPath.$SuratIzinUsahaKepariwisataanFileName,
@@ -133,6 +150,7 @@ class IzinTempatPenjualanMinumanBeralkoholController extends Controller {
 			'TandaDaftarPerusahaan' => $DestinationPath.$TandaDaftarPerusahaanFileName,
 			'IzinGangguan' => $IzinGangguan,
 			'KepemilikanTempat' => $DestinationPath.$SuratKepemilikanTempatFileName,
+            'StatusIzinGangguan' => $statusHO,
 			]
 		);
         $message = 'Data berhasil disimpan';

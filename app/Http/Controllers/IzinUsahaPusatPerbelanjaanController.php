@@ -142,8 +142,23 @@ class IzinUsahaPusatPerbelanjaanController extends Controller {
 		$RencanaKemitraan->move($DestinationPath, $RencanaKemitraanFileName);
 		$SuratPernyataanKebenaran->move($DestinationPath, $SuratPernyataanKebenaranFileName);
 
+        /* Ambil status izin HO */
+        $client = new Client();
+        $request = $client->createRequest('GET','http://usahaterpadu.pplbandung.biz.tm/statusizin/ho/'.$SuratIzinGangguan);
+        $response = $client->send($request);
+        $body = $response->getBody();
+        $statusHO = 0;
+        if(strlen($body) <= 2)
+        {
+            $statusHO = 0;
+        }
+        else
+        {
+            $statusHO = 1;
+        }
+
 		/* Insert izin to table IzinUsahaPusatPerbelanjaan */
-		DB::table('IzinUsahaPusatPerbelanjaan')->insert(
+		DB::table('izinusahapusatperbelanjaan')->insert(
 			[
 			'idIzin' => $id, 
 			'PengesahanKehakiman' => $DestinationPath.$FotokopiPengesahanKehakimanFileName,
